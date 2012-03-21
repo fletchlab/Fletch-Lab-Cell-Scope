@@ -15,12 +15,20 @@
 		DA1E7F14150DAB2F0067B351 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1E7F13150DAB2F0067B351 /* AppDelegate.m */; };
 		DA1E7F17150DAB2F0067B351 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1E7F15150DAB2F0067B351 /* MainStoryboard_iPhone.storyboard */; };
 		DA1E7F1A150DAB2F0067B351 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1E7F18150DAB2F0067B351 /* MainStoryboard_iPad.storyboard */; };
-		DA1E7F1D150DAB2F0067B351 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1E7F1C150DAB2F0067B351 /* ViewController.m */; };
 		DA1E7F25150DAB2F0067B351 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1E7F24150DAB2F0067B351 /* SenTestingKit.framework */; };
 		DA1E7F26150DAB2F0067B351 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1E7F03150DAB2E0067B351 /* UIKit.framework */; };
 		DA1E7F27150DAB2F0067B351 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1E7F05150DAB2F0067B351 /* Foundation.framework */; };
 		DA1E7F2F150DAB2F0067B351 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1E7F2D150DAB2F0067B351 /* InfoPlist.strings */; };
 		DA1E7F32150DAB2F0067B351 /* CellScopeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1E7F31150DAB2F0067B351 /* CellScopeTests.m */; };
+		DA1E7F3F150DB21C0067B351 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1E7F3E150DB21C0067B351 /* MobileCoreServices.framework */; };
+		DA2A9070150EF43B000F5DA7 /* cellscope_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2A906F150EF43B000F5DA7 /* cellscope_logo.png */; };
+		DA2A9072150EF692000F5DA7 /* cellscope_logo copy.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */; };
+		DA2F5C8A1519989F00215B20 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2F5C891519989F00215B20 /* AVFoundation.framework */; };
+		DA6069941519A44400B6CEEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069931519A44400B6CEEC /* QuartzCore.framework */; };
+		DA6069971519A71900B6CEEC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069961519A71900B6CEEC /* CoreMedia.framework */; };
+		DA72A07715198D29001C3793 /* MyAVController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA72A07615198D29001C3793 /* MyAVController.m */; };
+		DA72A07A15198DD9001C3793 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72A07915198DD9001C3793 /* CoreAudio.framework */; };
+		DA72A07C15198DDE001C3793 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72A07B15198DDE001C3793 /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +46,30 @@
 		DA1E7F03150DAB2E0067B351 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DA1E7F05150DAB2F0067B351 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA1E7F07150DAB2F0067B351 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DA1E7F0B150DAB2F0067B351 /* CellScope-Info.plist */ = {isa = PBXFileReference; path = "CellScope-Info.plist"; sourceTree = "<group>"; };
+		DA1E7F0B150DAB2F0067B351 /* CellScope-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CellScope-Info.plist"; sourceTree = "<group>"; };
 		DA1E7F0D150DAB2F0067B351 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA1E7F0F150DAB2F0067B351 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DA1E7F11150DAB2F0067B351 /* CellScope-Prefix.pch */ = {isa = PBXFileReference; path = "CellScope-Prefix.pch"; sourceTree = "<group>"; };
-		DA1E7F12150DAB2F0067B351 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA1E7F11150DAB2F0067B351 /* CellScope-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CellScope-Prefix.pch"; sourceTree = "<group>"; };
+		DA1E7F12150DAB2F0067B351 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA1E7F13150DAB2F0067B351 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA1E7F16150DAB2F0067B351 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		DA1E7F19150DAB2F0067B351 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		DA1E7F1B150DAB2F0067B351 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
-		DA1E7F1C150DAB2F0067B351 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DA1E7F23150DAB2F0067B351 /* CellScopeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CellScopeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1E7F24150DAB2F0067B351 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		DA1E7F2C150DAB2F0067B351 /* CellScopeTests-Info.plist */ = {isa = PBXFileReference; path = "CellScopeTests-Info.plist"; sourceTree = "<group>"; };
+		DA1E7F2C150DAB2F0067B351 /* CellScopeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CellScopeTests-Info.plist"; sourceTree = "<group>"; };
 		DA1E7F2E150DAB2F0067B351 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DA1E7F30150DAB2F0067B351 /* CellScopeTests.h */ = {isa = PBXFileReference; path = CellScopeTests.h; sourceTree = "<group>"; };
+		DA1E7F30150DAB2F0067B351 /* CellScopeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellScopeTests.h; sourceTree = "<group>"; };
 		DA1E7F31150DAB2F0067B351 /* CellScopeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellScopeTests.m; sourceTree = "<group>"; };
+		DA1E7F3E150DB21C0067B351 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		DA2A906F150EF43B000F5DA7 /* cellscope_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellscope_logo.png; sourceTree = "<group>"; };
+		DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellscope_logo copy.png"; sourceTree = "<group>"; };
+		DA2F5C891519989F00215B20 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DA6069931519A44400B6CEEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DA6069961519A71900B6CEEC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DA72A07515198D29001C3793 /* MyAVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAVController.h; sourceTree = "<group>"; };
+		DA72A07615198D29001C3793 /* MyAVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAVController.m; sourceTree = "<group>"; };
+		DA72A07915198DD9001C3793 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		DA72A07B15198DDE001C3793 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +77,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6069971519A71900B6CEEC /* CoreMedia.framework in Frameworks */,
+				DA6069941519A44400B6CEEC /* QuartzCore.framework in Frameworks */,
+				DA2F5C8A1519989F00215B20 /* AVFoundation.framework in Frameworks */,
+				DA72A07C15198DDE001C3793 /* CoreVideo.framework in Frameworks */,
+				DA72A07A15198DD9001C3793 /* CoreAudio.framework in Frameworks */,
+				DA1E7F3F150DB21C0067B351 /* MobileCoreServices.framework in Frameworks */,
 				DA1E7F04150DAB2F0067B351 /* UIKit.framework in Frameworks */,
 				DA1E7F06150DAB2F0067B351 /* Foundation.framework in Frameworks */,
 				DA1E7F08150DAB2F0067B351 /* CoreGraphics.framework in Frameworks */,
@@ -83,6 +105,8 @@
 		DA1E7EF4150DAB2E0067B351 = {
 			isa = PBXGroup;
 			children = (
+				DA6069961519A71900B6CEEC /* CoreMedia.framework */,
+				DA2A906E150EF43B000F5DA7 /* Images */,
 				DA1E7F09150DAB2F0067B351 /* CellScope */,
 				DA1E7F2A150DAB2F0067B351 /* CellScopeTests */,
 				DA1E7F02150DAB2E0067B351 /* Frameworks */,
@@ -102,6 +126,11 @@
 		DA1E7F02150DAB2E0067B351 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA6069931519A44400B6CEEC /* QuartzCore.framework */,
+				DA2F5C891519989F00215B20 /* AVFoundation.framework */,
+				DA72A07B15198DDE001C3793 /* CoreVideo.framework */,
+				DA72A07915198DD9001C3793 /* CoreAudio.framework */,
+				DA1E7F3E150DB21C0067B351 /* MobileCoreServices.framework */,
 				DA1E7F03150DAB2E0067B351 /* UIKit.framework */,
 				DA1E7F05150DAB2F0067B351 /* Foundation.framework */,
 				DA1E7F07150DAB2F0067B351 /* CoreGraphics.framework */,
@@ -117,8 +146,8 @@
 				DA1E7F13150DAB2F0067B351 /* AppDelegate.m */,
 				DA1E7F15150DAB2F0067B351 /* MainStoryboard_iPhone.storyboard */,
 				DA1E7F18150DAB2F0067B351 /* MainStoryboard_iPad.storyboard */,
-				DA1E7F1B150DAB2F0067B351 /* ViewController.h */,
-				DA1E7F1C150DAB2F0067B351 /* ViewController.m */,
+				DA72A07515198D29001C3793 /* MyAVController.h */,
+				DA72A07615198D29001C3793 /* MyAVController.m */,
 				DA1E7F0A150DAB2F0067B351 /* Supporting Files */,
 			);
 			path = CellScope;
@@ -152,6 +181,15 @@
 				DA1E7F2D150DAB2F0067B351 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA2A906E150EF43B000F5DA7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */,
+				DA2A906F150EF43B000F5DA7 /* cellscope_logo.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +265,8 @@
 				DA1E7F0E150DAB2F0067B351 /* InfoPlist.strings in Resources */,
 				DA1E7F17150DAB2F0067B351 /* MainStoryboard_iPhone.storyboard in Resources */,
 				DA1E7F1A150DAB2F0067B351 /* MainStoryboard_iPad.storyboard in Resources */,
+				DA2A9070150EF43B000F5DA7 /* cellscope_logo.png in Resources */,
+				DA2A9072150EF692000F5DA7 /* cellscope_logo copy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +303,7 @@
 			files = (
 				DA1E7F10150DAB2F0067B351 /* main.m in Sources */,
 				DA1E7F14150DAB2F0067B351 /* AppDelegate.m in Sources */,
-				DA1E7F1D150DAB2F0067B351 /* ViewController.m in Sources */,
+				DA72A07715198D29001C3793 /* MyAVController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +381,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -360,7 +400,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -371,6 +411,7 @@
 		DA1E7F36150DAB2F0067B351 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fletch2 Lab (4G3LRZJ5QU)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CellScope/CellScope-Prefix.pch";
 				INFOPLIST_FILE = "CellScope/CellScope-Info.plist";
@@ -382,6 +423,7 @@
 		DA1E7F37150DAB2F0067B351 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fletch2 Lab (4G3LRZJ5QU)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CellScope/CellScope-Prefix.pch";
 				INFOPLIST_FILE = "CellScope/CellScope-Info.plist";
@@ -443,6 +485,7 @@
 				DA1E7F37150DAB2F0067B351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA1E7F38150DAB2F0067B351 /* Build configuration list for PBXNativeTarget "CellScopeTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +494,7 @@
 				DA1E7F3A150DAB2F0067B351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
