@@ -16,10 +16,11 @@
 @synthesize customLayer;
 @synthesize prevLayer;
 
-@synthesize userMessage;
 @synthesize cameraPreviewView;
+@synthesize userMessage;
 @synthesize mySequence;
 @synthesize state;
+@synthesize imageOverlayView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +46,8 @@
     [self setImageView:nil];
     [self setUserMessage:nil];
     [self setCameraPreviewView:nil];
+    [self setCameraPreviewView:nil];
+    [self setImageOverlayView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -90,15 +93,26 @@
     
     /* Setup the preview layer */
     self.prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:captureSession];
-    CGRect layerRect = [self.cameraPreviewView.layer bounds];
-	[self.prevLayer setBounds:layerRect];
-	[self.prevLayer setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
+    self.prevLayer.frame = self.cameraPreviewView.bounds;
 	self.prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 	[self.cameraPreviewView.layer addSublayer:self.prevLayer];
+    
+    /* Setup the overlay layer */
+    self.imageOverlayView.alpha = 0;
     
     /* Start the capture */
     NSLog(@"Starting Image Capture");
     [self.captureSession startRunning];
+}
+
+- (IBAction)tapGestureAction:(UITapGestureRecognizer *)sender {
+    self.userMessage.text = [self.mySequence nextMessage];
+    [UIView animateWithDuration:0.1 animations:^{
+        self.imageOverlayView.alpha = 0.8;
+    }];
+    [UIView animateWithDuration:0.4 animations:^{
+        self.imageOverlayView.alpha = 0.0;
+    }];
 }
 
 #pragma mark AVCaptureSession delegate
@@ -113,29 +127,6 @@
     size_t width = CVPixelBufferGetWidth(imageBuffer); 
     size_t height = CVPixelBufferGetHeight(imageBuffer);  
     
-    /*Create a CGImageRef from the CVImageBufferRef*/
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB(); 
-    CGContextRef newContext = CGBitmapContextCreate(baseAddress, width, height, 8, bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
-    CGImageRef newImage = CGBitmapContextCreateImage(newContext); 
-	
-    /*We release some components*/
-    CGContextRelease(newContext); 
-    CGColorSpaceRelease(colorSpace);
-    
-    /*We display the result on the custom layer. All the display stuff must be done in the main thread because
-	 UIKit is no thread safe, and as we are not in the main thread (remember we didn't use the main_queue)
-	 we use performSelectorOnMainThread to call our CALayer and tell it to display the CGImage.*/
-	[self.customLayer performSelectorOnMainThread:@selector(setContents:) withObject: (__bridge id) newImage waitUntilDone:YES];
-	
-	/*We display the result on the image view (We need to change the orientation of the image so that the video is displayed correctly).
-	 Same thing as for the CALayer we are not in the main thread so ...*/
-	UIImage *image= [UIImage imageWithCGImage:newImage scale:1.0 orientation:UIImageOrientationRight];
-	
-	/*We relase the CGImageRef*/
-	CGImageRelease(newImage);
-	
-	[self.imageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:YES];
-	
 	/*We unlock the  image buffer*/
 	CVPixelBufferUnlockBaseAddress(imageBuffer,0);
 }

@@ -14,35 +14,22 @@
 
 @class UserSequence;
 
-@interface LoaLoaViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface LoaLoaViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate, UIGestureRecognizerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
 @property (weak, nonatomic) IBOutlet UILabel *userMessage;
-@property (weak, nonatomic) IBOutlet UIImageView *cameraPreviewView;
+
 @property (nonatomic, retain) UserSequence *mySequence;
 @property (nonatomic, retain) NSString *state;
 
-/*!
- @brief	The capture session takes the input from the camera and capture it
- */
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageOverlayView;
 @property (nonatomic, retain) AVCaptureSession *captureSession;
-
-/*!
- @brief	The UIImageView we use to display the image generated from the imageBuffer
- */
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
-/*!
- @brief	The CALayer we use to display the CGImageRef generated from the imageBuffer
- */
 @property (nonatomic, retain) CALayer *customLayer;
-/*!
- @brief	The CALAyer customized by apple to display the video corresponding to a capture session
- */
 @property (nonatomic, retain) AVCaptureVideoPreviewLayer *prevLayer;
 
-/*!
- @brief	This method initializes the capture session
- */
 - (void)initCapture;
+- (IBAction)tapGestureAction:(UITapGestureRecognizer *)sender;
 
 @end
