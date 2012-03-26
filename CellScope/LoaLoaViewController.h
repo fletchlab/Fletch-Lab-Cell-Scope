@@ -13,21 +13,34 @@
 #import <CoreMedia/CoreMedia.h>
 
 @class UserSequence;
+@class MicroscopeCamera;
 
 @interface LoaLoaViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate, UIGestureRecognizerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
+/*!
+ @brief Cell phone camera device, for use as the microscope camera.
+ */
+@property (nonatomic, retain) MicroscopeCamera* microscopeCamera;
+
+/*!
+ @brief Instructions to the user
+ */
 @property (weak, nonatomic) IBOutlet UILabel *userMessage;
 
+/*!
+ @brief Instruction sequence. Contains messages to be displayed to user
+ */
 @property (nonatomic, retain) UserSequence *mySequence;
+
+/*!
+ @brief The current state of the instruction sequence
+ */
 @property (nonatomic, retain) NSString *state;
 
-
+@property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageOverlayView;
-@property (nonatomic, retain) AVCaptureSession *captureSession;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, retain) CALayer *customLayer;
-@property (nonatomic, retain) AVCaptureVideoPreviewLayer *prevLayer;
 
 - (void)initCapture;
 - (IBAction)tapGestureAction:(UITapGestureRecognizer *)sender;

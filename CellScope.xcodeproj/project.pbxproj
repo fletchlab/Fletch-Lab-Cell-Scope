@@ -31,6 +31,7 @@
 		DA72A07715198D29001C3793 /* MyAVController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA72A07615198D29001C3793 /* MyAVController.m */; };
 		DA72A07A15198DD9001C3793 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72A07915198DD9001C3793 /* CoreAudio.framework */; };
 		DA72A07C15198DDE001C3793 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72A07B15198DDE001C3793 /* CoreVideo.framework */; };
+		DAA848B9151C155E00870719 /* MicroscopeCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA848B8151C155E00870719 /* MicroscopeCamera.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,12 +71,14 @@
 		DA6069961519A71900B6CEEC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DA63ACA7151AB90D0090EAEF /* UserSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSequence.h; sourceTree = "<group>"; };
 		DA63ACA8151AB90D0090EAEF /* UserSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSequence.m; sourceTree = "<group>"; };
-		DA63ACAB151ABE230090EAEF /* LoaLoaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = LoaLoaViewController.h; sourceTree = "<group>"; };
-		DA63ACAC151ABE230090EAEF /* LoaLoaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; path = LoaLoaViewController.m; sourceTree = "<group>"; };
+		DA63ACAB151ABE230090EAEF /* LoaLoaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoaLoaViewController.h; sourceTree = "<group>"; };
+		DA63ACAC151ABE230090EAEF /* LoaLoaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoaLoaViewController.m; sourceTree = "<group>"; };
 		DA72A07515198D29001C3793 /* MyAVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAVController.h; sourceTree = "<group>"; };
 		DA72A07615198D29001C3793 /* MyAVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAVController.m; sourceTree = "<group>"; };
 		DA72A07915198DD9001C3793 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		DA72A07B15198DDE001C3793 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		DAA848B7151C155E00870719 /* MicroscopeCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroscopeCamera.h; sourceTree = "<group>"; };
+		DAA848B8151C155E00870719 /* MicroscopeCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroscopeCamera.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +114,6 @@
 		DA1E7EF4150DAB2E0067B351 = {
 			isa = PBXGroup;
 			children = (
-				DA6069961519A71900B6CEEC /* CoreMedia.framework */,
 				DA2A906E150EF43B000F5DA7 /* Images */,
 				DA1E7F09150DAB2F0067B351 /* CellScope */,
 				DA1E7F2A150DAB2F0067B351 /* CellScopeTests */,
@@ -132,6 +134,7 @@
 		DA1E7F02150DAB2E0067B351 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA6069961519A71900B6CEEC /* CoreMedia.framework */,
 				DA6069931519A44400B6CEEC /* QuartzCore.framework */,
 				DA2F5C891519989F00215B20 /* AVFoundation.framework */,
 				DA72A07B15198DDE001C3793 /* CoreVideo.framework */,
@@ -148,17 +151,14 @@
 		DA1E7F09150DAB2F0067B351 /* CellScope */ = {
 			isa = PBXGroup;
 			children = (
+				DA24A471151E9E73001FA808 /* Devices */,
+				DA24A470151E9E54001FA808 /* Model */,
+				DA24A46E151E9E36001FA808 /* UIControllers */,
 				DA1E7F12150DAB2F0067B351 /* AppDelegate.h */,
 				DA1E7F13150DAB2F0067B351 /* AppDelegate.m */,
 				DA1E7F15150DAB2F0067B351 /* MainStoryboard_iPhone.storyboard */,
 				DA1E7F18150DAB2F0067B351 /* MainStoryboard_iPad.storyboard */,
-				DA72A07515198D29001C3793 /* MyAVController.h */,
-				DA72A07615198D29001C3793 /* MyAVController.m */,
 				DA1E7F0A150DAB2F0067B351 /* Supporting Files */,
-				DA63ACA7151AB90D0090EAEF /* UserSequence.h */,
-				DA63ACA8151AB90D0090EAEF /* UserSequence.m */,
-				DA63ACAB151ABE230090EAEF /* LoaLoaViewController.h */,
-				DA63ACAC151ABE230090EAEF /* LoaLoaViewController.m */,
 			);
 			path = CellScope;
 			sourceTree = "<group>";
@@ -191,6 +191,35 @@
 				DA1E7F2D150DAB2F0067B351 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA24A46E151E9E36001FA808 /* UIControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA72A07515198D29001C3793 /* MyAVController.h */,
+				DA72A07615198D29001C3793 /* MyAVController.m */,
+				DA63ACAB151ABE230090EAEF /* LoaLoaViewController.h */,
+				DA63ACAC151ABE230090EAEF /* LoaLoaViewController.m */,
+			);
+			name = UIControllers;
+			sourceTree = "<group>";
+		};
+		DA24A470151E9E54001FA808 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA63ACA7151AB90D0090EAEF /* UserSequence.h */,
+				DA63ACA8151AB90D0090EAEF /* UserSequence.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DA24A471151E9E73001FA808 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				DAA848B7151C155E00870719 /* MicroscopeCamera.h */,
+				DAA848B8151C155E00870719 /* MicroscopeCamera.m */,
+			);
+			name = Devices;
 			sourceTree = "<group>";
 		};
 		DA2A906E150EF43B000F5DA7 /* Images */ = {
@@ -316,6 +345,7 @@
 				DA72A07715198D29001C3793 /* MyAVController.m in Sources */,
 				DA63ACA9151AB90D0090EAEF /* UserSequence.m in Sources */,
 				DA63ACAD151ABE230090EAEF /* LoaLoaViewController.m in Sources */,
+				DAA848B9151C155E00870719 /* MicroscopeCamera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

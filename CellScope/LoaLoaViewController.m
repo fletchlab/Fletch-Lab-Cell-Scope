@@ -8,18 +8,18 @@
 
 #import "LoaLoaViewController.h"
 #import "UserSequence.h"
+#import "Microscopecamera.h"
 
 @implementation LoaLoaViewController
 
-@synthesize captureSession;
 @synthesize imageView;
 @synthesize customLayer;
-@synthesize prevLayer;
 
-@synthesize cameraPreviewView;
+@synthesize microscopeCamera;
 @synthesize userMessage;
 @synthesize mySequence;
 @synthesize state;
+@synthesize cameraPreviewView;
 @synthesize imageOverlayView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,11 +32,10 @@
 {
     [super viewDidLoad];
     if (self) {
-        NSLog(@"Initializing the view LoaLoaViewController");
+        self.microscopeCamera = [[MicroscopeCamera alloc] init];
         self.mySequence = [[UserSequence alloc] init];
         self.state = [self.mySequence nextMessage];
         [self.userMessage setText: self.state];
-        NSLog(@"State: %@", self.state);
         [self initCapture];
     }
 }
@@ -48,6 +47,7 @@
     [self setCameraPreviewView:nil];
     [self setCameraPreviewView:nil];
     [self setImageOverlayView:nil];
+    [self setCameraPreviewView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -59,50 +59,26 @@
 
 - (void)initCapture
 {
-    /* Setup input and output devices */
-    AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:[AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo] error:nil];
-    AVCaptureVideoDataOutput *captureOutput = [[AVCaptureVideoDataOutput alloc] init];
-    
-    /* Process frames while dispatch queue is occupied? */
-    captureOutput.alwaysDiscardsLateVideoFrames = YES;
     
     /* Create processing queue */
     dispatch_queue_t queue;
     queue = dispatch_queue_create("CameraQueue", NULL);
-    [captureOutput setSampleBufferDelegate:self queue:queue];
+    [microscopeCamera.captureOutput setSampleBufferDelegate:self queue:queue];
     dispatch_release(queue);
     
     /* Set the buffer queue to our newly created queue */
-    [captureOutput setSampleBufferDelegate:self queue:queue];
-    
-    /* Set the pixel type for the captured video */
-    NSString* key = (NSString*) kCVPixelBufferPixelFormatTypeKey;
-    NSNumber* value = [NSNumber numberWithUnsignedInt:kCVPixelFormatType_32BGRA];
-    NSDictionary* videoSettings = [NSDictionary dictionaryWithObject:value forKey:key];
-    [captureOutput setVideoSettings:videoSettings];
-    
-    /* Create the capture session */
-    self.captureSession = [[AVCaptureSession alloc] init];
-    
-    /* Add input and output to the session */
-    [self.captureSession addInput:captureInput];
-    [self.captureSession addOutput:captureOutput];
-    
-    /* Set capture quality */
-    [self.captureSession setSessionPreset:AVCaptureSessionPresetPhoto];
+    [microscopeCamera.captureOutput setSampleBufferDelegate:self queue:queue];
     
     /* Setup the preview layer */
-    self.prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:captureSession];
-    self.prevLayer.frame = self.cameraPreviewView.bounds;
-	self.prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-	[self.cameraPreviewView.layer addSublayer:self.prevLayer];
+    CALayer* prevLayer = [microscopeCamera generateVideoPreviewLayer];
+    prevLayer.frame = self.cameraPreviewView.bounds;
+	[self.cameraPreviewView.layer addSublayer:prevLayer];
     
     /* Setup the overlay layer */
     self.imageOverlayView.alpha = 0;
     
     /* Start the capture */
-    NSLog(@"Starting Image Capture");
-    [self.captureSession startRunning];
+    [self.microscopeCamera startCapture];
 }
 
 - (IBAction)tapGestureAction:(UITapGestureRecognizer *)sender {
