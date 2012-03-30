@@ -20,7 +20,9 @@
 @synthesize mySequence;
 @synthesize state;
 @synthesize cameraPreviewView;
+@synthesize cancelButton;
 @synthesize imageOverlayView;
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,6 +50,7 @@
     [self setCameraPreviewView:nil];
     [self setImageOverlayView:nil];
     [self setCameraPreviewView:nil];
+    [self setCancelButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -57,9 +60,21 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(BOOL) gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]){
+        [gestureRecognizer addTarget:self action:@selector(tapGestureAction:)];
+    }
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    return YES;
+}
+
 - (void)initCapture
 {
-    
     /* Create processing queue */
     dispatch_queue_t queue;
     queue = dispatch_queue_create("CameraQueue", NULL);
@@ -81,7 +96,7 @@
     [self.microscopeCamera startCapture];
 }
 
-- (IBAction)tapGestureAction:(UITapGestureRecognizer *)sender {
+- (void)tapGestureAction:(UITapGestureRecognizer *)sender {
     self.userMessage.text = [self.mySequence nextMessage];
     [UIView animateWithDuration:0.1 animations:^{
         self.imageOverlayView.alpha = 0.8;
@@ -105,6 +120,10 @@
     
 	/*We unlock the  image buffer*/
 	CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+}
+
+- (IBAction)didCancel:(id)sender {
+    [self.delegate loaLoaViewDidCancel:self];
 }
 
 @end

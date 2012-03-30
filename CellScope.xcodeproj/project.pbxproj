@@ -21,6 +21,7 @@
 		DA1E7F2F150DAB2F0067B351 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1E7F2D150DAB2F0067B351 /* InfoPlist.strings */; };
 		DA1E7F32150DAB2F0067B351 /* CellScopeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1E7F31150DAB2F0067B351 /* CellScopeTests.m */; };
 		DA1E7F3F150DB21C0067B351 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1E7F3E150DB21C0067B351 /* MobileCoreServices.framework */; };
+		DA24A47B152659AA001FA808 /* LoaLoaMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA24A47A152659AA001FA808 /* LoaLoaMenuViewController.m */; };
 		DA2A9070150EF43B000F5DA7 /* cellscope_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2A906F150EF43B000F5DA7 /* cellscope_logo.png */; };
 		DA2A9072150EF692000F5DA7 /* cellscope_logo copy.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */; };
 		DA2F5C8A1519989F00215B20 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2F5C891519989F00215B20 /* AVFoundation.framework */; };
@@ -64,6 +65,8 @@
 		DA1E7F30150DAB2F0067B351 /* CellScopeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellScopeTests.h; sourceTree = "<group>"; };
 		DA1E7F31150DAB2F0067B351 /* CellScopeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellScopeTests.m; sourceTree = "<group>"; };
 		DA1E7F3E150DB21C0067B351 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		DA24A479152659AA001FA808 /* LoaLoaMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoaLoaMenuViewController.h; sourceTree = "<group>"; };
+		DA24A47A152659AA001FA808 /* LoaLoaMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoaLoaMenuViewController.m; sourceTree = "<group>"; };
 		DA2A906F150EF43B000F5DA7 /* cellscope_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellscope_logo.png; sourceTree = "<group>"; };
 		DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellscope_logo copy.png"; sourceTree = "<group>"; };
 		DA2F5C891519989F00215B20 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -200,6 +203,8 @@
 				DA72A07615198D29001C3793 /* MyAVController.m */,
 				DA63ACAB151ABE230090EAEF /* LoaLoaViewController.h */,
 				DA63ACAC151ABE230090EAEF /* LoaLoaViewController.m */,
+				DA24A479152659AA001FA808 /* LoaLoaMenuViewController.h */,
+				DA24A47A152659AA001FA808 /* LoaLoaMenuViewController.m */,
 			);
 			name = UIControllers;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				DA63ACA9151AB90D0090EAEF /* UserSequence.m in Sources */,
 				DA63ACAD151ABE230090EAEF /* LoaLoaViewController.m in Sources */,
 				DAA848B9151C155E00870719 /* MicroscopeCamera.m in Sources */,
+				DA24A47B152659AA001FA808 /* LoaLoaMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
