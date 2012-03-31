@@ -21,18 +21,18 @@
 		DA1E7F2F150DAB2F0067B351 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1E7F2D150DAB2F0067B351 /* InfoPlist.strings */; };
 		DA1E7F32150DAB2F0067B351 /* CellScopeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1E7F31150DAB2F0067B351 /* CellScopeTests.m */; };
 		DA1E7F3F150DB21C0067B351 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1E7F3E150DB21C0067B351 /* MobileCoreServices.framework */; };
-		DA24A47B152659AA001FA808 /* LoaLoaMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA24A47A152659AA001FA808 /* LoaLoaMenuViewController.m */; };
+		DA24A47B152659AA001FA808 /* AppMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA24A47A152659AA001FA808 /* AppMenuViewController.m */; };
 		DA2A9070150EF43B000F5DA7 /* cellscope_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2A906F150EF43B000F5DA7 /* cellscope_logo.png */; };
 		DA2A9072150EF692000F5DA7 /* cellscope_logo copy.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */; };
 		DA2F5C8A1519989F00215B20 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2F5C891519989F00215B20 /* AVFoundation.framework */; };
 		DA6069941519A44400B6CEEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069931519A44400B6CEEC /* QuartzCore.framework */; };
 		DA6069971519A71900B6CEEC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069961519A71900B6CEEC /* CoreMedia.framework */; };
 		DA63ACA9151AB90D0090EAEF /* UserSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63ACA8151AB90D0090EAEF /* UserSequence.m */; };
-		DA63ACAD151ABE230090EAEF /* LoaLoaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63ACAC151ABE230090EAEF /* LoaLoaViewController.m */; };
-		DA72A07715198D29001C3793 /* MyAVController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA72A07615198D29001C3793 /* MyAVController.m */; };
+		DA63ACAD151ABE230090EAEF /* CollectImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63ACAC151ABE230090EAEF /* CollectImagesViewController.m */; };
 		DA72A07A15198DD9001C3793 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72A07915198DD9001C3793 /* CoreAudio.framework */; };
 		DA72A07C15198DDE001C3793 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72A07B15198DDE001C3793 /* CoreVideo.framework */; };
 		DAA848B9151C155E00870719 /* MicroscopeCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA848B8151C155E00870719 /* MicroscopeCamera.m */; };
+		DAC3B245152680000038C5B0 /* MicroscopeCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC3B244152680000038C5B0 /* MicroscopeCameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +65,8 @@
 		DA1E7F30150DAB2F0067B351 /* CellScopeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellScopeTests.h; sourceTree = "<group>"; };
 		DA1E7F31150DAB2F0067B351 /* CellScopeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellScopeTests.m; sourceTree = "<group>"; };
 		DA1E7F3E150DB21C0067B351 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		DA24A479152659AA001FA808 /* LoaLoaMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoaLoaMenuViewController.h; sourceTree = "<group>"; };
-		DA24A47A152659AA001FA808 /* LoaLoaMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoaLoaMenuViewController.m; sourceTree = "<group>"; };
+		DA24A479152659AA001FA808 /* AppMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMenuViewController.h; sourceTree = "<group>"; };
+		DA24A47A152659AA001FA808 /* AppMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppMenuViewController.m; sourceTree = "<group>"; };
 		DA2A906F150EF43B000F5DA7 /* cellscope_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellscope_logo.png; sourceTree = "<group>"; };
 		DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellscope_logo copy.png"; sourceTree = "<group>"; };
 		DA2F5C891519989F00215B20 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -74,14 +74,14 @@
 		DA6069961519A71900B6CEEC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DA63ACA7151AB90D0090EAEF /* UserSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSequence.h; sourceTree = "<group>"; };
 		DA63ACA8151AB90D0090EAEF /* UserSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSequence.m; sourceTree = "<group>"; };
-		DA63ACAB151ABE230090EAEF /* LoaLoaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoaLoaViewController.h; sourceTree = "<group>"; };
-		DA63ACAC151ABE230090EAEF /* LoaLoaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoaLoaViewController.m; sourceTree = "<group>"; };
-		DA72A07515198D29001C3793 /* MyAVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAVController.h; sourceTree = "<group>"; };
-		DA72A07615198D29001C3793 /* MyAVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAVController.m; sourceTree = "<group>"; };
+		DA63ACAB151ABE230090EAEF /* CollectImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectImagesViewController.h; sourceTree = "<group>"; };
+		DA63ACAC151ABE230090EAEF /* CollectImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectImagesViewController.m; sourceTree = "<group>"; };
 		DA72A07915198DD9001C3793 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		DA72A07B15198DDE001C3793 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		DAA848B7151C155E00870719 /* MicroscopeCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroscopeCamera.h; sourceTree = "<group>"; };
 		DAA848B8151C155E00870719 /* MicroscopeCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroscopeCamera.m; sourceTree = "<group>"; };
+		DAC3B243152680000038C5B0 /* MicroscopeCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroscopeCameraViewController.h; sourceTree = "<group>"; };
+		DAC3B244152680000038C5B0 /* MicroscopeCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroscopeCameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,12 +199,12 @@
 		DA24A46E151E9E36001FA808 /* UIControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DA72A07515198D29001C3793 /* MyAVController.h */,
-				DA72A07615198D29001C3793 /* MyAVController.m */,
-				DA63ACAB151ABE230090EAEF /* LoaLoaViewController.h */,
-				DA63ACAC151ABE230090EAEF /* LoaLoaViewController.m */,
-				DA24A479152659AA001FA808 /* LoaLoaMenuViewController.h */,
-				DA24A47A152659AA001FA808 /* LoaLoaMenuViewController.m */,
+				DA63ACAB151ABE230090EAEF /* CollectImagesViewController.h */,
+				DA63ACAC151ABE230090EAEF /* CollectImagesViewController.m */,
+				DA24A479152659AA001FA808 /* AppMenuViewController.h */,
+				DA24A47A152659AA001FA808 /* AppMenuViewController.m */,
+				DAC3B243152680000038C5B0 /* MicroscopeCameraViewController.h */,
+				DAC3B244152680000038C5B0 /* MicroscopeCameraViewController.m */,
 			);
 			name = UIControllers;
 			sourceTree = "<group>";
@@ -347,11 +347,11 @@
 			files = (
 				DA1E7F10150DAB2F0067B351 /* main.m in Sources */,
 				DA1E7F14150DAB2F0067B351 /* AppDelegate.m in Sources */,
-				DA72A07715198D29001C3793 /* MyAVController.m in Sources */,
 				DA63ACA9151AB90D0090EAEF /* UserSequence.m in Sources */,
-				DA63ACAD151ABE230090EAEF /* LoaLoaViewController.m in Sources */,
+				DA63ACAD151ABE230090EAEF /* CollectImagesViewController.m in Sources */,
 				DAA848B9151C155E00870719 /* MicroscopeCamera.m in Sources */,
-				DA24A47B152659AA001FA808 /* LoaLoaMenuViewController.m in Sources */,
+				DA24A47B152659AA001FA808 /* AppMenuViewController.m in Sources */,
+				DAC3B245152680000038C5B0 /* MicroscopeCameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

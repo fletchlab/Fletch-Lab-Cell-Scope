@@ -6,11 +6,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
-        <!--Loa Loa Menu View Controller-->
+        <!--App Menu View Controller-->
         <scene sceneID="rHs-Ta-odA">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Upy-WJ-d8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="dxx-Rb-q1n" customClass="LoaLoaMenuViewController" sceneMemberID="viewController">
+                <tableViewController id="dxx-Rb-q1n" customClass="AppMenuViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ghr-9Q-bND">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,22 +76,19 @@
             </objects>
             <point key="canvasLocation" x="-353" y="-561"/>
         </scene>
-        <!--Loa Loa View Controller-->
+        <!--Collect Images View Controller-->
         <scene sceneID="ALa-dL-f9M">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U84-Ee-d50" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="OGx-5h-rlU" customClass="LoaLoaViewController" sceneMemberID="viewController">
+                <viewController id="OGx-5h-rlU" customClass="CollectImagesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sir-ZK-l50">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="center" id="SW0-0U-e0M">
+                            <view contentMode="scaleToFill" id="ui1-tE-BrA" userLabel="View - CameraPreview">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="TbG-R7-xva" appends="YES" id="gc1-OJ-A5S"/>
-                                </connections>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="3" adjustsFontSizeToFit="NO" id="TCa-gX-m2P">
                                 <rect key="frame" x="0.0" y="360" width="320" height="100"/>
@@ -132,7 +129,7 @@
                         <gestureRecognizers/>
                     </view>
                     <connections>
-                        <outlet property="cameraPreviewView" destination="SW0-0U-e0M" id="abV-r3-ojH"/>
+                        <outlet property="cameraPreviewView" destination="ui1-tE-BrA" id="c6e-g9-7br"/>
                         <outlet property="cancelButton" destination="Fyi-pE-Lcp" id="A5s-DV-vgK"/>
                         <outlet property="userMessage" destination="TCa-gX-m2P" id="LZt-fS-GKG"/>
                     </connections>
