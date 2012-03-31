@@ -24,15 +24,16 @@
 		DA24A47B152659AA001FA808 /* AppMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA24A47A152659AA001FA808 /* AppMenuViewController.m */; };
 		DA2A9070150EF43B000F5DA7 /* cellscope_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2A906F150EF43B000F5DA7 /* cellscope_logo.png */; };
 		DA2A9072150EF692000F5DA7 /* cellscope_logo copy.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */; };
+		DA2E4FA615279B4B0013B9E9 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2E4FA515279B4B0013B9E9 /* CameraViewController.m */; };
 		DA2F5C8A1519989F00215B20 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2F5C891519989F00215B20 /* AVFoundation.framework */; };
 		DA6069941519A44400B6CEEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069931519A44400B6CEEC /* QuartzCore.framework */; };
 		DA6069971519A71900B6CEEC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069961519A71900B6CEEC /* CoreMedia.framework */; };
 		DA63ACA9151AB90D0090EAEF /* UserSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63ACA8151AB90D0090EAEF /* UserSequence.m */; };
-		DA63ACAD151ABE230090EAEF /* CollectImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63ACAC151ABE230090EAEF /* CollectImagesViewController.m */; };
 		DA72A07A15198DD9001C3793 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72A07915198DD9001C3793 /* CoreAudio.framework */; };
 		DA72A07C15198DDE001C3793 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72A07B15198DDE001C3793 /* CoreVideo.framework */; };
 		DAA848B9151C155E00870719 /* MicroscopeCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA848B8151C155E00870719 /* MicroscopeCamera.m */; };
-		DAC3B245152680000038C5B0 /* MicroscopeCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC3B244152680000038C5B0 /* MicroscopeCameraViewController.m */; };
+		DAADFD2815278924002BAF5B /* CameraButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DAADFD2715278924002BAF5B /* CameraButton.png */; };
+		DAFFCB3F15279F2A002F8F13 /* CollectImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFFCB3E15279F2A002F8F13 /* CollectImagesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,19 +70,20 @@
 		DA24A47A152659AA001FA808 /* AppMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppMenuViewController.m; sourceTree = "<group>"; };
 		DA2A906F150EF43B000F5DA7 /* cellscope_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellscope_logo.png; sourceTree = "<group>"; };
 		DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellscope_logo copy.png"; sourceTree = "<group>"; };
+		DA2E4FA415279B4B0013B9E9 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		DA2E4FA515279B4B0013B9E9 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		DA2F5C891519989F00215B20 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DA6069931519A44400B6CEEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DA6069961519A71900B6CEEC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DA63ACA7151AB90D0090EAEF /* UserSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSequence.h; sourceTree = "<group>"; };
 		DA63ACA8151AB90D0090EAEF /* UserSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSequence.m; sourceTree = "<group>"; };
-		DA63ACAB151ABE230090EAEF /* CollectImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectImagesViewController.h; sourceTree = "<group>"; };
-		DA63ACAC151ABE230090EAEF /* CollectImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectImagesViewController.m; sourceTree = "<group>"; };
 		DA72A07915198DD9001C3793 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		DA72A07B15198DDE001C3793 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		DAA848B7151C155E00870719 /* MicroscopeCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroscopeCamera.h; sourceTree = "<group>"; };
 		DAA848B8151C155E00870719 /* MicroscopeCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroscopeCamera.m; sourceTree = "<group>"; };
-		DAC3B243152680000038C5B0 /* MicroscopeCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroscopeCameraViewController.h; sourceTree = "<group>"; };
-		DAC3B244152680000038C5B0 /* MicroscopeCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroscopeCameraViewController.m; sourceTree = "<group>"; };
+		DAADFD2715278924002BAF5B /* CameraButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CameraButton.png; sourceTree = "<group>"; };
+		DAFFCB3D15279F2A002F8F13 /* CollectImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectImagesViewController.h; sourceTree = "<group>"; };
+		DAFFCB3E15279F2A002F8F13 /* CollectImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectImagesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		DA1E7F09150DAB2F0067B351 /* CellScope */ = {
 			isa = PBXGroup;
 			children = (
+				DA2E4FA315279B1F0013B9E9 /* SubviewControllers */,
 				DA24A471151E9E73001FA808 /* Devices */,
 				DA24A470151E9E54001FA808 /* Model */,
 				DA24A46E151E9E36001FA808 /* UIControllers */,
@@ -199,12 +202,10 @@
 		DA24A46E151E9E36001FA808 /* UIControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DA63ACAB151ABE230090EAEF /* CollectImagesViewController.h */,
-				DA63ACAC151ABE230090EAEF /* CollectImagesViewController.m */,
 				DA24A479152659AA001FA808 /* AppMenuViewController.h */,
 				DA24A47A152659AA001FA808 /* AppMenuViewController.m */,
-				DAC3B243152680000038C5B0 /* MicroscopeCameraViewController.h */,
-				DAC3B244152680000038C5B0 /* MicroscopeCameraViewController.m */,
+				DAFFCB3D15279F2A002F8F13 /* CollectImagesViewController.h */,
+				DAFFCB3E15279F2A002F8F13 /* CollectImagesViewController.m */,
 			);
 			name = UIControllers;
 			sourceTree = "<group>";
@@ -230,10 +231,20 @@
 		DA2A906E150EF43B000F5DA7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DAADFD2715278924002BAF5B /* CameraButton.png */,
 				DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */,
 				DA2A906F150EF43B000F5DA7 /* cellscope_logo.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		DA2E4FA315279B1F0013B9E9 /* SubviewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA2E4FA415279B4B0013B9E9 /* CameraViewController.h */,
+				DA2E4FA515279B4B0013B9E9 /* CameraViewController.m */,
+			);
+			name = SubviewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +322,7 @@
 				DA1E7F1A150DAB2F0067B351 /* MainStoryboard_iPad.storyboard in Resources */,
 				DA2A9070150EF43B000F5DA7 /* cellscope_logo.png in Resources */,
 				DA2A9072150EF692000F5DA7 /* cellscope_logo copy.png in Resources */,
+				DAADFD2815278924002BAF5B /* CameraButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,10 +360,10 @@
 				DA1E7F10150DAB2F0067B351 /* main.m in Sources */,
 				DA1E7F14150DAB2F0067B351 /* AppDelegate.m in Sources */,
 				DA63ACA9151AB90D0090EAEF /* UserSequence.m in Sources */,
-				DA63ACAD151ABE230090EAEF /* CollectImagesViewController.m in Sources */,
 				DAA848B9151C155E00870719 /* MicroscopeCamera.m in Sources */,
 				DA24A47B152659AA001FA808 /* AppMenuViewController.m in Sources */,
-				DAC3B245152680000038C5B0 /* MicroscopeCameraViewController.m in Sources */,
+				DA2E4FA615279B4B0013B9E9 /* CameraViewController.m in Sources */,
+				DAFFCB3F15279F2A002F8F13 /* CollectImagesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

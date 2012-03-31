@@ -36,6 +36,18 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"CollectImages"])
+	{
+        NSLog(@"Hello segue");
+		CollectImagesViewController *collectImagesViewController = segue.destinationViewController;
+        collectImagesViewController.delegate = self;
+	}
+}
+
+#pragma mark - Collect Images Delegate
+
 - (void)collectImagesViewDidCancel:(CollectImagesViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -44,16 +56,6 @@
 - (void)collectImagesViewSequenceComplete:(CollectImagesViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"LoaLoaView"])
-	{
-        NSLog(@"Hello segue");
-		CollectImagesViewController *collectImagesViewController = segue.destinationViewController;
-        collectImagesViewController.delegate = self;
-	}
 }
 
 #pragma mark - Table view delegate

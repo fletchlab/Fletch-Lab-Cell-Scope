@@ -1,54 +1,43 @@
 //
-//  LoaLoaController.m
+//  CollectImagesViewController.m
 //  CellScope
 //
-//  Created by Matthew Bakalar on 3/20/12.
+//  Created by Matthew Bakalar on 3/31/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "CollectImagesViewController.h"
-#import "UserSequence.h"
-#import "MicroscopeCameraViewController.h"
+#import "CameraViewController.h"
 #import "MicroscopeCamera.h"
 
 @implementation CollectImagesViewController
 
-@synthesize userMessage;
-@synthesize mySequence;
-@synthesize state;
-@synthesize cancelButton;
-@synthesize delegate;
+@synthesize cameraView;
 @synthesize cameraViewController;
-@synthesize cameraPreviewView;
 @synthesize microscopeCamera;
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (self) {
-        // Initialize data
-        self.mySequence = [[UserSequence alloc] init];
-        self.microscopeCamera = [[MicroscopeCamera alloc] init];
-        self.state = [self.mySequence nextMessage];
-        [self.userMessage setText: self.state];
-                
-        // Initialize subviews
-        self.cameraViewController = [[MicroscopeCameraViewController alloc] initWithCamera:microscopeCamera andView:self.cameraPreviewView];
-        [self.cameraViewController initCapture];
-    }
+	// Do any additional setup after loading the view.
+    self.microscopeCamera = [[MicroscopeCamera alloc] init];
+    self.cameraViewController = [[CameraViewController alloc] initWithCamera:self.microscopeCamera andCameraLayer:self.cameraView];
+    [self.cameraViewController startCapture];
 }
 
 - (void)viewDidUnload
 {
-    [self setUserMessage:nil];
-    [self setCancelButton:nil];
-    [self setCameraPreviewView:nil];
+    [self setCameraView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -58,25 +47,13 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
--(BOOL) gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-    if([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]){
-        [gestureRecognizer addTarget:self action:@selector(tapGestureAction:)];
+- (IBAction)snapPicture:(id)sender {
+    NSLog(@"Hello snap");
+    if(self.cameraViewController) 
+    {
+        NSLog(@"Send Flash");
+        [self.cameraViewController cameraFlashAnimation];
     }
-    return YES;
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-{
-    return YES;
-}
-
-- (void)tapGestureAction:(UITapGestureRecognizer *)sender {
-    self.userMessage.text = [self.mySequence nextMessage];
-}
-
-- (IBAction)didCancel:(id)sender {
-    [self.delegate collectImagesViewDidCancel:self];
 }
 
 @end
