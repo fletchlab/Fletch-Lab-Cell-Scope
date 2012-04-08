@@ -31,6 +31,8 @@
 
 - (void)startCapture;
 
+- (void)recordVideoForTime: (NSNumber*)recordTime;
+
 - (AVCaptureVideoPreviewLayer*)generateVideoPreviewLayer;
 
 @end

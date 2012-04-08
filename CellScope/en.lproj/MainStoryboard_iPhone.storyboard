@@ -88,6 +88,12 @@
                             <view contentMode="scaleToFill" id="eoE-rV-LVK" userLabel="View - CameraLayer">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <progressView opaque="NO" alpha="0.5" contentMode="scaleToFill" progress="0.5" id="yEm-ca-yK4">
+                                        <rect key="frame" x="85" y="20" width="150" height="9"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </progressView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2pT-aV-Sdy" userLabel="Button - Shutter">
@@ -120,18 +126,6 @@
     <resources>
         <image name="CameraButton.png" width="169" height="85"/>
     </resources>
-    <classes>
-        <class className="AppMenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppMenuViewController.h"/>
-        </class>
-        <class className="CollectImagesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CollectImagesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="snapPicture:"/>
-                <relationship kind="outlet" name="cameraView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

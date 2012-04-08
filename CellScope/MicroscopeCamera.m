@@ -42,6 +42,11 @@
     return self;
 }
 
+- (void)recordVideoForTime: (NSNumber*)recordTime
+{
+    /* Record a video for a predefined amount of time. A place holder for the LoaLoa demo */
+}
+
 - (void)startCapture
 {
     /* Start the capture */
