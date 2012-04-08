@@ -26,6 +26,7 @@
 		DA2A9072150EF692000F5DA7 /* cellscope_logo copy.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */; };
 		DA2E4FA615279B4B0013B9E9 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2E4FA515279B4B0013B9E9 /* CameraViewController.m */; };
 		DA2F5C8A1519989F00215B20 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2F5C891519989F00215B20 /* AVFoundation.framework */; };
+		DA37615B1532366C0091139A /* DZRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA37615A1532366C0091139A /* DZRoundProgressView.m */; };
 		DA6069941519A44400B6CEEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069931519A44400B6CEEC /* QuartzCore.framework */; };
 		DA6069971519A71900B6CEEC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069961519A71900B6CEEC /* CoreMedia.framework */; };
 		DA63ACA9151AB90D0090EAEF /* UserSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63ACA8151AB90D0090EAEF /* UserSequence.m */; };
@@ -73,6 +74,8 @@
 		DA2E4FA415279B4B0013B9E9 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		DA2E4FA515279B4B0013B9E9 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		DA2F5C891519989F00215B20 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DA3761591532366C0091139A /* DZRoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRoundProgressView.h; sourceTree = "<group>"; };
+		DA37615A1532366C0091139A /* DZRoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRoundProgressView.m; sourceTree = "<group>"; };
 		DA6069931519A44400B6CEEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DA6069961519A71900B6CEEC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DA63ACA7151AB90D0090EAEF /* UserSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSequence.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				DA1E7F15150DAB2F0067B351 /* MainStoryboard_iPhone.storyboard */,
 				DA1E7F18150DAB2F0067B351 /* MainStoryboard_iPad.storyboard */,
 				DA1E7F0A150DAB2F0067B351 /* Supporting Files */,
+				DA3761591532366C0091139A /* DZRoundProgressView.h */,
+				DA37615A1532366C0091139A /* DZRoundProgressView.m */,
 			);
 			path = CellScope;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				DA24A47B152659AA001FA808 /* AppMenuViewController.m in Sources */,
 				DA2E4FA615279B4B0013B9E9 /* CameraViewController.m in Sources */,
 				DAFFCB3F15279F2A002F8F13 /* CollectImagesViewController.m in Sources */,
+				DA37615B1532366C0091139A /* DZRoundProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

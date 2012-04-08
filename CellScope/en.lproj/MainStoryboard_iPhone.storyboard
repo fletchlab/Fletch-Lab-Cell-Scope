@@ -89,10 +89,33 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" id="G3y-Lh-0yv" userLabel="Image View - UserMessageGraphic">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </imageView>
                                     <progressView opaque="NO" alpha="0.5" contentMode="scaleToFill" progress="0.5" id="yEm-ca-yK4">
                                         <rect key="frame" x="85" y="20" width="150" height="9"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </progressView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="User Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="FaC-Se-kf3">
+                                        <rect key="frame" x="20" y="0.0" width="280" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="d7n-gL-TC8" userLabel="Activity Indicator - Processing">
+                                        <rect key="frame" x="143" y="210" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Analyzing..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="2n4-kA-32u">
+                                        <rect key="frame" x="130" y="255" width="63" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -108,7 +131,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="snapPicture:" destination="OGx-5h-rlU" eventType="touchUpInside" id="yvc-jS-MGK"/>
+                                    <action selector="recordVideoPresetTime:" destination="OGx-5h-rlU" eventType="touchUpInside" id="yDs-X3-Lqg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -116,7 +139,10 @@
                         <gestureRecognizers/>
                     </view>
                     <connections>
-                        <outlet property="cameraView" destination="eoE-rV-LVK" id="rbi-0F-x9b"/>
+                        <outlet property="analyzingLabel" destination="2n4-kA-32u" id="pTO-Bk-M6r"/>
+                        <outlet property="imageProcessingActivityIndicator" destination="d7n-gL-TC8" id="D7P-E5-ngl"/>
+                        <outlet property="userMessageLabel" destination="FaC-Se-kf3" id="mN8-Oi-1aX"/>
+                        <outlet property="videoProgressBar" destination="yEm-ca-yK4" id="sFl-Gg-xji"/>
                     </connections>
                 </viewController>
             </objects>
@@ -126,6 +152,27 @@
     <resources>
         <image name="CameraButton.png" width="169" height="85"/>
     </resources>
+    <classes>
+        <class className="AppMenuViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppMenuViewController.h"/>
+        </class>
+        <class className="CollectImagesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CollectImagesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="recordVideoPresetTime:"/>
+                <relationship kind="action" name="snapPicture:"/>
+                <relationship kind="outlet" name="analyzingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cameraView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="imageProcessingActivityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="roundProgressView" candidateClass="DZRoundProgressView"/>
+                <relationship kind="outlet" name="userMessageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="videoProgressBar" candidateClass="UIProgressView"/>
+            </relationships>
+        </class>
+        <class className="DZRoundProgressView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DZRoundProgressView.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

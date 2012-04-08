@@ -22,8 +22,8 @@
         sequenceIdx = 0;
         NSLog(@"Initializing the UserSequence");
         self.states = [NSDictionary dictionaryWithObjectsAndKeys:
-                    @"Tap screen to record an image", @"CollectImage",
-                    @"Reposition field of view, then tap screen to continue", @"Reposition", 
+                    @"Tap camera to record video", @"CollectImage",
+                    @"Find new field of view, then tap camera to record video", @"Reposition", 
                     @"Done", @"Done",
                     nil];
         self.sequence = [NSArray arrayWithObjects: @"CollectImage", @"Reposition", @"CollectImage", @"Reposition", @"CollectImage", @"Reposition", @"CollectImage", @"Done", nil];
