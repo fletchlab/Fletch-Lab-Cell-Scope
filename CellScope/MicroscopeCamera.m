@@ -21,6 +21,15 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
 {
     // Setup input and output devices
     self.captureInput = [AVCaptureDeviceInput deviceInputWithDevice:[AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo] error:nil];
+    //lock the focus
+    if ([captureInput.device isFocusModeSupported:AVCaptureFocusModeLocked] && [captureInput.device lockForConfiguration:nil]) {
+        [captureInput.device setFocusMode:AVCaptureFocusModeLocked];
+        //hard to tell if the focus lock is actually working, but you can clearly that locking in general is working by setting an exposure lock and covering the sensor when you start a new scan
+        //[captureInput.device setExposureMode:AVCaptureExposureModeLocked];
+        [captureInput.device unlockForConfiguration];
+         NSLog(@"locked focus");
+    }
+
     self.captureOutput = [[AVCaptureVideoDataOutput alloc] init];
     
     // Process frames while dispatch queue is occupied?
