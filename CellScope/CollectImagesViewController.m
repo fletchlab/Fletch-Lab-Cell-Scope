@@ -28,6 +28,7 @@
 @synthesize userSequence;
 @synthesize delegate;
 @synthesize userMessageLabel;
+@synthesize userMessageImage;
 @synthesize analyzingLabel;
 @synthesize imageProcessingActivityIndicator;
 
@@ -62,6 +63,7 @@
     [self setImageProcessingActivityIndicator:nil];
     [self setAnalyzingLabel:nil];
     [self setRoundProgressView:nil];
+    [self setUserMessageImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -88,6 +90,7 @@
     self.videoProgressBar.hidden = NO;
     [UIView animateWithDuration:1.0 animations:^{
         self.userMessageLabel.alpha = 0;
+        self.userMessageImage.alpha = 0;
     }];
     [self.microscopeCamera recordVideoForTime:[NSNumber numberWithInt:5.0]];
 }
@@ -113,6 +116,7 @@
     self.userMessageLabel.text = [self.userSequence nextMessage];
     [UIView animateWithDuration:1.0 animations:^{
         self.userMessageLabel.alpha = 1.0;
+        self.userMessageImage.alpha = 0.5;
     }];
 }
 

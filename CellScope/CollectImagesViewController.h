@@ -29,6 +29,7 @@
 
 @property (weak, nonatomic) id <CollectImagesViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UILabel *userMessageLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *userMessageImage;
 @property (weak, nonatomic) IBOutlet UILabel *analyzingLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageProcessingActivityIndicator;
 @property (strong, nonatomic) MicroscopeCamera* microscopeCamera;
