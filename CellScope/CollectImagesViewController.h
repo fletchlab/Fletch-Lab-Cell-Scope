@@ -40,6 +40,6 @@
 - (IBAction)recordVideoPresetTime:(id)sender;
 - (void)startImageProcessingDummy;
 - (void)nextUserMessage;
-- (void)onDoneProcessing;
+- (void)onDoneProcessing:(NSTimer *)timer;
 
 @end

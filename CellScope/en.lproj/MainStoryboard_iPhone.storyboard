@@ -152,28 +152,6 @@
     <resources>
         <image name="CameraButton.png" width="169" height="85"/>
     </resources>
-    <classes>
-        <class className="AppMenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppMenuViewController.h"/>
-        </class>
-        <class className="CollectImagesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CollectImagesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="recordVideoPresetTime:"/>
-                <relationship kind="action" name="snapPicture:"/>
-                <relationship kind="outlet" name="analyzingLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cameraView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="imageProcessingActivityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="roundProgressView" candidateClass="DZRoundProgressView"/>
-                <relationship kind="outlet" name="userMessageImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="userMessageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="videoProgressBar" candidateClass="UIProgressView"/>
-            </relationships>
-        </class>
-        <class className="DZRoundProgressView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DZRoundProgressView.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
