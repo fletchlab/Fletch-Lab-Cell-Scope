@@ -13,10 +13,12 @@
 #import <CoreVideo/CoreVideo.h>
 #import <CoreMedia/CoreMedia.h>
 
-@interface MicroscopeCamera : NSObject {
+@interface MicroscopeCamera : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate> {
     float taskTime;
     float taskTimeElapsed;
     float taskTimerPeriod;
+    BOOL recording;
+    int frameNumber;
 }
 
 extern NSString * const NOTIF_VideoProgress;
@@ -41,6 +43,14 @@ extern NSString * const NOTIF_VideoProgress;
  */
 @property (nonatomic, retain) NSTimer *taskTimer;
 
+@property (nonatomic, retain) AVAssetWriter *assetWriter;
+
+@property (nonatomic, retain) AVAssetWriterInputPixelBufferAdaptor *pixelBufferAdaptor ;
+
+@property (nonatomic, retain) AVAssetWriterInput *assetWriterInput;
+
+@property (nonatomic, retain) NSURL *outputURL;
+
 - (void)startCapture;
 
 /*!
@@ -52,5 +62,7 @@ extern NSString * const NOTIF_VideoProgress;
  @brief Create the AVFoundation preview layer for viewing output from the camera
  */
 - (AVCaptureVideoPreviewLayer*)generateVideoPreviewLayer;
+- (void) initVideo;
+- (void) finishVideo;
 
 @end
