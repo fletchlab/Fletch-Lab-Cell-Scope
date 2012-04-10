@@ -53,6 +53,18 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     [self.captureSession addInput:captureInput];
     [self.captureSession addOutput:captureOutput];
 
+    //Set frame rate (if requried)
+    AVCaptureConnection *captureConnection = [captureOutput connectionWithMediaType:AVMediaTypeVideo];
+	CMTimeShow(captureConnection.videoMinFrameDuration);
+	CMTimeShow(captureConnection.videoMaxFrameDuration);
+	if (captureConnection.supportsVideoMinFrameDuration)
+		captureConnection.videoMinFrameDuration = CMTimeMake(1, 30);
+	if (captureConnection.supportsVideoMaxFrameDuration)
+		captureConnection.videoMaxFrameDuration = CMTimeMake(1, 30);
+    CMTimeShow(captureConnection.videoMinFrameDuration);
+    CMTimeShow(captureConnection.videoMaxFrameDuration);
+
+    
     // Set capture quality
     [self.captureSession setSessionPreset:AVCaptureSessionPresetPhoto];
     
@@ -109,7 +121,7 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     taskTimerPeriod = 0.05;
     taskTime = recordTime.floatValue;
     if(recording==FALSE){
-        //[self initVideo];
+        [self initVideo];
     }
     
     // Execute the function onTaskTimer every taskTimerPeriod seconds
@@ -136,7 +148,9 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
         
         [self.taskTimer invalidate];
         self.taskTimer = nil;
-        //[self finishVideo];
+        if (recording==TRUE){
+            [self finishVideo];
+        }
     }
 }
 
@@ -217,7 +231,7 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
         //NSLog(@"adding imagebuffer %i",frameNumber);
         
         [pixelBufferAdaptor appendPixelBuffer:imageBuffer
-                         withPresentationTime:CMTimeMake(frameNumber, 25)];
+                         withPresentationTime:CMTimeMake(frameNumber, 30)];
         
     frameNumber++;
     }
