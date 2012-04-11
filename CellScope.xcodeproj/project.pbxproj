@@ -26,8 +26,21 @@
 		DA2A9072150EF692000F5DA7 /* cellscope_logo copy.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */; };
 		DA2E4FA615279B4B0013B9E9 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2E4FA515279B4B0013B9E9 /* CameraViewController.m */; };
 		DA2F5C8A1519989F00215B20 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2F5C891519989F00215B20 /* AVFoundation.framework */; };
+		DA30EC381534FC9200FD9671 /* patient_step_A.png in Resources */ = {isa = PBXBuildFile; fileRef = DA30EC331534FC9100FD9671 /* patient_step_A.png */; };
+		DA30EC391534FC9200FD9671 /* patient_step_B.png in Resources */ = {isa = PBXBuildFile; fileRef = DA30EC341534FC9100FD9671 /* patient_step_B.png */; };
+		DA30EC3A1534FC9200FD9671 /* sample_prep_A.png in Resources */ = {isa = PBXBuildFile; fileRef = DA30EC351534FC9100FD9671 /* sample_prep_A.png */; };
+		DA30EC3B1534FC9200FD9671 /* sample_prep_B.png in Resources */ = {isa = PBXBuildFile; fileRef = DA30EC361534FC9100FD9671 /* sample_prep_B.png */; };
+		DA30EC3C1534FC9200FD9671 /* sample_prep_C.png in Resources */ = {isa = PBXBuildFile; fileRef = DA30EC371534FC9100FD9671 /* sample_prep_C.png */; };
+		DA30EC3F1534FD6C00FD9671 /* Focus_A.png in Resources */ = {isa = PBXBuildFile; fileRef = DA30EC3D1534FD6C00FD9671 /* Focus_A.png */; };
+		DA30EC401534FD6C00FD9671 /* move_Slide_A.png in Resources */ = {isa = PBXBuildFile; fileRef = DA30EC3E1534FD6C00FD9671 /* move_Slide_A.png */; };
+		DA30EC421534FF5400FD9671 /* Focus_A.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DA30EC411534FF5400FD9671 /* Focus_A.pdf */; };
+		DA30EC451535083800FD9671 /* Results_10000.png in Resources */ = {isa = PBXBuildFile; fileRef = DA30EC431535083800FD9671 /* Results_10000.png */; };
+		DA30EC461535083800FD9671 /* Results_50000.png in Resources */ = {isa = PBXBuildFile; fileRef = DA30EC441535083800FD9671 /* Results_50000.png */; };
+		DA30EC49153509B700FD9671 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA30EC48153509B700FD9671 /* ResultsViewController.m */; };
 		DA37615B1532366C0091139A /* DZRoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA37615A1532366C0091139A /* DZRoundProgressView.m */; };
-		DA45623E15329E9A00C7CF05 /* InfectionGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = DA45623D15329E9A00C7CF05 /* InfectionGraph.png */; };
+		DA3F116E1533C09C008BB244 /* PictureInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F116D1533C09C008BB244 /* PictureInstructionsViewController.m */; };
+		DA3F11711533C5A6008BB244 /* PictureInstructionSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F11701533C5A6008BB244 /* PictureInstructionSequence.m */; };
+		DA3F11731533DA35008BB244 /* NextButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DA3F11721533DA35008BB244 /* NextButton.png */; };
 		DA6069941519A44400B6CEEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069931519A44400B6CEEC /* QuartzCore.framework */; };
 		DA6069971519A71900B6CEEC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069961519A71900B6CEEC /* CoreMedia.framework */; };
 		DA63ACA9151AB90D0090EAEF /* UserSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63ACA8151AB90D0090EAEF /* UserSequence.m */; };
@@ -75,9 +88,25 @@
 		DA2E4FA415279B4B0013B9E9 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		DA2E4FA515279B4B0013B9E9 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		DA2F5C891519989F00215B20 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DA30EC331534FC9100FD9671 /* patient_step_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = patient_step_A.png; sourceTree = "<group>"; };
+		DA30EC341534FC9100FD9671 /* patient_step_B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = patient_step_B.png; sourceTree = "<group>"; };
+		DA30EC351534FC9100FD9671 /* sample_prep_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_prep_A.png; sourceTree = "<group>"; };
+		DA30EC361534FC9100FD9671 /* sample_prep_B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_prep_B.png; sourceTree = "<group>"; };
+		DA30EC371534FC9100FD9671 /* sample_prep_C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_prep_C.png; sourceTree = "<group>"; };
+		DA30EC3D1534FD6C00FD9671 /* Focus_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Focus_A.png; sourceTree = "<group>"; };
+		DA30EC3E1534FD6C00FD9671 /* move_Slide_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = move_Slide_A.png; sourceTree = "<group>"; };
+		DA30EC411534FF5400FD9671 /* Focus_A.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Focus_A.pdf; sourceTree = "<group>"; };
+		DA30EC431535083800FD9671 /* Results_10000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Results_10000.png; sourceTree = "<group>"; };
+		DA30EC441535083800FD9671 /* Results_50000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Results_50000.png; sourceTree = "<group>"; };
+		DA30EC47153509B700FD9671 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		DA30EC48153509B700FD9671 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		DA3761591532366C0091139A /* DZRoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRoundProgressView.h; sourceTree = "<group>"; };
 		DA37615A1532366C0091139A /* DZRoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRoundProgressView.m; sourceTree = "<group>"; };
-		DA45623D15329E9A00C7CF05 /* InfectionGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InfectionGraph.png; sourceTree = "<group>"; };
+		DA3F116C1533C09C008BB244 /* PictureInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureInstructionsViewController.h; sourceTree = "<group>"; };
+		DA3F116D1533C09C008BB244 /* PictureInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureInstructionsViewController.m; sourceTree = "<group>"; };
+		DA3F116F1533C5A6008BB244 /* PictureInstructionSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureInstructionSequence.h; sourceTree = "<group>"; };
+		DA3F11701533C5A6008BB244 /* PictureInstructionSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureInstructionSequence.m; sourceTree = "<group>"; };
+		DA3F11721533DA35008BB244 /* NextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NextButton.png; sourceTree = "<group>"; };
 		DA6069931519A44400B6CEEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DA6069961519A71900B6CEEC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DA63ACA7151AB90D0090EAEF /* UserSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSequence.h; sourceTree = "<group>"; };
@@ -213,6 +242,10 @@
 				DA24A47A152659AA001FA808 /* AppMenuViewController.m */,
 				DAFFCB3D15279F2A002F8F13 /* CollectImagesViewController.h */,
 				DAFFCB3E15279F2A002F8F13 /* CollectImagesViewController.m */,
+				DA3F116C1533C09C008BB244 /* PictureInstructionsViewController.h */,
+				DA3F116D1533C09C008BB244 /* PictureInstructionsViewController.m */,
+				DA30EC47153509B700FD9671 /* ResultsViewController.h */,
+				DA30EC48153509B700FD9671 /* ResultsViewController.m */,
 			);
 			name = UIControllers;
 			sourceTree = "<group>";
@@ -222,6 +255,8 @@
 			children = (
 				DA63ACA7151AB90D0090EAEF /* UserSequence.h */,
 				DA63ACA8151AB90D0090EAEF /* UserSequence.m */,
+				DA3F116F1533C5A6008BB244 /* PictureInstructionSequence.h */,
+				DA3F11701533C5A6008BB244 /* PictureInstructionSequence.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -238,7 +273,17 @@
 		DA2A906E150EF43B000F5DA7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				DA45623D15329E9A00C7CF05 /* InfectionGraph.png */,
+				DA30EC431535083800FD9671 /* Results_10000.png */,
+				DA30EC441535083800FD9671 /* Results_50000.png */,
+				DA30EC411534FF5400FD9671 /* Focus_A.pdf */,
+				DA30EC3D1534FD6C00FD9671 /* Focus_A.png */,
+				DA30EC3E1534FD6C00FD9671 /* move_Slide_A.png */,
+				DA30EC331534FC9100FD9671 /* patient_step_A.png */,
+				DA30EC341534FC9100FD9671 /* patient_step_B.png */,
+				DA30EC351534FC9100FD9671 /* sample_prep_A.png */,
+				DA30EC361534FC9100FD9671 /* sample_prep_B.png */,
+				DA30EC371534FC9100FD9671 /* sample_prep_C.png */,
+				DA3F11721533DA35008BB244 /* NextButton.png */,
 				DAADFD2715278924002BAF5B /* CameraButton.png */,
 				DA2A9071150EF692000F5DA7 /* cellscope_logo copy.png */,
 				DA2A906F150EF43B000F5DA7 /* cellscope_logo.png */,
@@ -331,7 +376,17 @@
 				DA2A9070150EF43B000F5DA7 /* cellscope_logo.png in Resources */,
 				DA2A9072150EF692000F5DA7 /* cellscope_logo copy.png in Resources */,
 				DAADFD2815278924002BAF5B /* CameraButton.png in Resources */,
-				DA45623E15329E9A00C7CF05 /* InfectionGraph.png in Resources */,
+				DA3F11731533DA35008BB244 /* NextButton.png in Resources */,
+				DA30EC381534FC9200FD9671 /* patient_step_A.png in Resources */,
+				DA30EC391534FC9200FD9671 /* patient_step_B.png in Resources */,
+				DA30EC3A1534FC9200FD9671 /* sample_prep_A.png in Resources */,
+				DA30EC3B1534FC9200FD9671 /* sample_prep_B.png in Resources */,
+				DA30EC3C1534FC9200FD9671 /* sample_prep_C.png in Resources */,
+				DA30EC3F1534FD6C00FD9671 /* Focus_A.png in Resources */,
+				DA30EC401534FD6C00FD9671 /* move_Slide_A.png in Resources */,
+				DA30EC421534FF5400FD9671 /* Focus_A.pdf in Resources */,
+				DA30EC451535083800FD9671 /* Results_10000.png in Resources */,
+				DA30EC461535083800FD9671 /* Results_50000.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +429,9 @@
 				DA2E4FA615279B4B0013B9E9 /* CameraViewController.m in Sources */,
 				DAFFCB3F15279F2A002F8F13 /* CollectImagesViewController.m in Sources */,
 				DA37615B1532366C0091139A /* DZRoundProgressView.m in Sources */,
+				DA3F116E1533C09C008BB244 /* PictureInstructionsViewController.m in Sources */,
+				DA3F11711533C5A6008BB244 /* PictureInstructionSequence.m in Sources */,
+				DA30EC49153509B700FD9671 /* ResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PictureInstructionsViewController.h"
+#import "ResultsViewController.h"
 
 @class CameraViewController;
 @class MicroscopeCamera;
 @class CollectImagesViewController;
 @class UserSequence;
+@class PictureInstructionSequence;
 @class DZRoundProgressView;
 
 @protocol CollectImagesViewControllerDelegate <NSObject>
@@ -21,7 +24,8 @@
 
 @end
 
-@interface CollectImagesViewController : UIViewController
+@interface CollectImagesViewController : UIViewController <PictureInstructionsViewControllerDelegate, ResultsViewControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet DZRoundProgressView *roundProgressView;
 
 @property (weak, nonatomic) IBOutlet UIProgressView *videoProgressBar;
@@ -34,12 +38,17 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageProcessingActivityIndicator;
 @property (strong, nonatomic) MicroscopeCamera* microscopeCamera;
 @property (nonatomic, retain) UserSequence* userSequence;
+@property (nonatomic, retain) PictureInstructionSequence* instructionSequence;
 @property (strong, nonatomic) CameraViewController* cameraViewController;
+@property (nonatomic, retain) NSString *instructionMode;
 
-- (IBAction)snapPicture:(id)sender;
-- (IBAction)recordVideoPresetTime:(id)sender;
+- (IBAction)onActionButtonTouch;
+- (void)snapPicture:(id)sender;
+- (void)recordVideoPresetTime;
 - (void)startImageProcessingDummy;
 - (void)nextUserMessage;
 - (void)onDoneProcessing:(NSTimer *)timer;
+- (void)updateUserMessageLabel;
+
 
 @end

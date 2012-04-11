@@ -1,22 +1,24 @@
 //
-//  UserSequence.h
+//  PictureInstructionSequence.h
 //  CellScope
 //
-//  Created by Matthew Bakalar on 3/21/12.
+//  Created by Matthew Bakalar on 4/9/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UserSequence : NSObject
+@interface PictureInstructionSequence : NSObject
 
 @property (nonatomic, retain) NSArray* sequence;
 @property (nonatomic, retain) NSDictionary* states;
+@property (nonatomic, retain) NSDictionary* images;
 
 - (NSString*)currentMessage;
+- (NSString*)currentImage;
 - (void)advanceSequence;
-- (void)usePictureInstructionStates;
-- (NSString*)state;
+- (BOOL)returnToCapture;
 - (BOOL)atFirstState;
+- (NSString*)state;
 
 @end
