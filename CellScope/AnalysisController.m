@@ -146,9 +146,18 @@ unsigned char r, g, b, a;
     }
     
 	//draw a rect in a psuedo random spot
-    int value = (arc4random() % 10)+1;
-    NSLog(@"%i", value);
-    CGContextStrokeRect(ctx, CGRectMake(value*37, value*26, 100, 100));
+    int valuex = (arc4random() % 10)+1;
+    int valuey = (arc4random() % 10)+1;
+
+    //NSLog(@"%i", value);
+    CGContextStrokeRect(ctx, CGRectMake(valuex*37, valuey*26, 100, 100));
+    int value2x = (arc4random() % 10)+1;
+    int value2y = (arc4random() % 10)+1;
+    CGContextStrokeRect(ctx, CGRectMake(value2x*37, value2y*26, 100, 100));
+    int value3x = (arc4random() % 10)+1;
+    int value3y = (arc4random() % 10)+1;
+    CGContextStrokeRect(ctx, CGRectMake(value3x*37, value3y*26, 100, 100));
+
 
 	// make image out of bitmap context
 	UIImage *retImage = UIGraphicsGetImageFromCurrentImageContext();

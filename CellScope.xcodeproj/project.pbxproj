@@ -438,6 +438,9 @@
 				DA2E4FA615279B4B0013B9E9 /* CameraViewController.m in Sources */,
 				DAFFCB3F15279F2A002F8F13 /* CollectImagesViewController.m in Sources */,
 				DA37615B1532366C0091139A /* DZRoundProgressView.m in Sources */,
+				DA3F116E1533C09C008BB244 /* PictureInstructionsViewController.m in Sources */,
+				DA3F11711533C5A6008BB244 /* PictureInstructionSequence.m in Sources */,
+				DA30EC49153509B700FD9671 /* ResultsViewController.m in Sources */,
 				8212654D1534B5A000E23E8A /* AnalysisController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
