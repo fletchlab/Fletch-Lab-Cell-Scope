@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import "AnalysisController.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
@@ -19,6 +20,8 @@
     float taskTimerPeriod;
     BOOL recording;
     int frameNumber;
+    AnalysisController *analysis_object;
+
 }
 
 extern NSString * const NOTIF_VideoProgress;
@@ -64,5 +67,6 @@ extern NSString * const NOTIF_VideoProgress;
 - (AVCaptureVideoPreviewLayer*)generateVideoPreviewLayer;
 - (void) initVideo;
 - (void) finishVideo;
+- (void) analyzeImages;
 
 @end

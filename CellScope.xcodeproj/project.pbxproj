@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8212654D1534B5A000E23E8A /* AnalysisController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212654C1534B5A000E23E8A /* AnalysisController.m */; };
 		82E590F51533B6FB0025904C /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E590F41533B6FB0025904C /* AssetsLibrary.framework */; };
 		DA1E7F04150DAB2F0067B351 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1E7F03150DAB2E0067B351 /* UIKit.framework */; };
 		DA1E7F06150DAB2F0067B351 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1E7F05150DAB2F0067B351 /* Foundation.framework */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8212654B1534B59F00E23E8A /* AnalysisController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisController.h; sourceTree = "<group>"; };
+		8212654C1534B5A000E23E8A /* AnalysisController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisController.m; sourceTree = "<group>"; };
 		82E590F41533B6FB0025904C /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		DA1E7EFF150DAB2E0067B351 /* CellScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CellScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1E7F03150DAB2E0067B351 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -255,6 +258,8 @@
 			children = (
 				DA2E4FA415279B4B0013B9E9 /* CameraViewController.h */,
 				DA2E4FA515279B4B0013B9E9 /* CameraViewController.m */,
+				8212654B1534B59F00E23E8A /* AnalysisController.h */,
+				8212654C1534B5A000E23E8A /* AnalysisController.m */,
 			);
 			name = SubviewControllers;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				DA2E4FA615279B4B0013B9E9 /* CameraViewController.m in Sources */,
 				DAFFCB3F15279F2A002F8F13 /* CollectImagesViewController.m in Sources */,
 				DA37615B1532366C0091139A /* DZRoundProgressView.m in Sources */,
+				8212654D1534B5A000E23E8A /* AnalysisController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -68,14 +68,33 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     // Set capture quality
     [self.captureSession setSessionPreset:AVCaptureSessionPresetPhoto];
     
-    /* set the video output to 640x480 in H.264, via an asset writer */
-    NSDictionary *outputSettings =
-    [NSDictionary dictionaryWithObjectsAndKeys:
-    [NSNumber numberWithInt:640], AVVideoWidthKey,
-    [NSNumber numberWithInt:480], AVVideoHeightKey,
-    AVVideoCodecH264, AVVideoCodecKey,
-    nil];
+    //Check size based configs are supported before setting them
+    //if ([captureSession canSetSessionPreset:AVCaptureSessionPreset1280x720])				
+    //    [captureSession setSessionPreset:AVCaptureSessionPreset1280x720];
+    if([captureSession canSetSessionPreset:AVCaptureSessionPreset640x480])				
+        [captureSession setSessionPreset:AVCaptureSessionPreset640x480];
     
+    /* set the video output to 1280x720 or 640x480 in H.264, via an asset writer */
+    //720p on iphone4 is way to slow
+    NSDictionary *outputSettings;
+    /*if ([captureSession canSetSessionPreset:AVCaptureSessionPreset1280x720]){				
+
+        outputSettings =
+        [NSDictionary dictionaryWithObjectsAndKeys:
+         [NSNumber numberWithInt:1280], AVVideoWidthKey,
+         [NSNumber numberWithInt:720], AVVideoHeightKey,
+         AVVideoCodecH264, AVVideoCodecKey,
+         nil];
+    }*/
+    if ([captureSession canSetSessionPreset:AVCaptureSessionPreset640x480]){		
+        outputSettings =
+        [NSDictionary dictionaryWithObjectsAndKeys:
+         [NSNumber numberWithInt:640], AVVideoWidthKey,
+         [NSNumber numberWithInt:480], AVVideoHeightKey,
+         AVVideoCodecH264, AVVideoCodecKey,
+         nil];
+    
+    }
     //set up the assetwriter input
     assetWriterInput = [AVAssetWriterInput 
                                             assetWriterInputWithMediaType:AVMediaTypeVideo
@@ -171,8 +190,12 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
 
 - (void) initVideo{
     NSLog(@"start recording");
+    //tell the delegate to start listening to the video output
     recording=TRUE;
+    //reset the frame number
     frameNumber=0;
+    //create our analysis object to which we will send data
+    analysis_object=[[AnalysisController alloc] init];
 
     //delete files in temp folder
     NSFileManager* fileManager = [NSFileManager defaultManager];
@@ -218,24 +241,88 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     }
 }
 
+- (void) analyzeImages{
+    [analysis_object analyzeImages];
+}
+
 - (void)        captureOutput:(AVCaptureOutput *)captureOutput 
         didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer 
                fromConnection:(AVCaptureConnection *)connection
 {
     if (recording==TRUE){
-    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    //NSLog(@"in capture output");
-    //add current imageBuffer to our pixelbufferadaptor
-    //static int64_t frameNumber = 0;
-    if(assetWriterInput.readyForMoreMediaData)
-        //NSLog(@"adding imagebuffer %i",frameNumber);
-        
-        [pixelBufferAdaptor appendPixelBuffer:imageBuffer
-                         withPresentationTime:CMTimeMake(frameNumber, 30)];
-        
-    frameNumber++;
+        CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+        //NSLog(@"in capture output");
+        //add current imageBuffer to our pixelbufferadaptor
+        //static int64_t frameNumber = 0;
+        if(assetWriterInput.readyForMoreMediaData){
+            //NSLog(@"adding imagebuffer %i",frameNumber);
+            [pixelBufferAdaptor appendPixelBuffer:imageBuffer
+                             withPresentationTime:CMTimeMake(frameNumber, 30)];
+        }
+        if ((frameNumber % 30)==0){
+            //this block puts the current image buffer into NSData.  Right now, stick with converting it to UIImage
+            /*
+            //get the byte data from sampleBuffer in an NSData
+            CVPixelBufferLockBaseAddress(imageBuffer, 0); 
+            size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+            //size_t width = CVPixelBufferGetWidth(imageBuffer);
+            size_t height = CVPixelBufferGetHeight(imageBuffer);
+            void *src_buff = CVPixelBufferGetBaseAddress(imageBuffer);
+             
+            NSData *data = [NSData dataWithBytes:src_buff length:bytesPerRow * height];
+            [analysis_object addImage:curr_image]; 
+             
+            UIImage *curr_image = [self imageFromSampleBuffer:sampleBuffer];
+
+            CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+             */
+            
+            UIImage *curr_image = [self imageFromSampleBuffer:sampleBuffer];
+            [analysis_object addImage:curr_image]; 
+
+
+        }
+        frameNumber++;
     }
 }
 
-
+- (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer 
+{
+    // Get a CMSampleBuffer's Core Video image buffer for the media data
+    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer); 
+    // Lock the base address of the pixel buffer
+    CVPixelBufferLockBaseAddress(imageBuffer, 0); 
+    
+    // Get the number of bytes per row for the pixel buffer
+    void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer); 
+    
+    // Get the number of bytes per row for the pixel buffer
+    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer); 
+    // Get the pixel buffer width and height
+    size_t width = CVPixelBufferGetWidth(imageBuffer); 
+    size_t height = CVPixelBufferGetHeight(imageBuffer); 
+    
+    // Create a device-dependent RGB color space
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB(); 
+    
+    // Create a bitmap graphics context with the sample buffer data
+    CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8, 
+                                                 bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst); 
+    // Create a Quartz image from the pixel data in the bitmap graphics context
+    CGImageRef quartzImage = CGBitmapContextCreateImage(context); 
+    // Unlock the pixel buffer
+    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+    
+    // Free up the context and color space
+    CGContextRelease(context); 
+    CGColorSpaceRelease(colorSpace);
+    
+    // Create an image object from the Quartz image
+    UIImage *image = [UIImage imageWithCGImage:quartzImage];
+    
+    // Release the Quartz image
+    CGImageRelease(quartzImage);
+    
+    return (image);
+}
 @end
