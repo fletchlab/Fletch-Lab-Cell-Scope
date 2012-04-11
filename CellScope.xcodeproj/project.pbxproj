@@ -45,6 +45,8 @@
 		DA6069941519A44400B6CEEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069931519A44400B6CEEC /* QuartzCore.framework */; };
 		DA6069971519A71900B6CEEC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6069961519A71900B6CEEC /* CoreMedia.framework */; };
 		DA63ACA9151AB90D0090EAEF /* UserSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63ACA8151AB90D0090EAEF /* UserSequence.m */; };
+		DA6BFF7915351A01007047A0 /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6BFF7815351A01007047A0 /* app-icon.png */; };
+		DA6BFF7C15351A11007047A0 /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6BFF7B15351A11007047A0 /* app-icon.png */; };
 		DA72A07A15198DD9001C3793 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72A07915198DD9001C3793 /* CoreAudio.framework */; };
 		DA72A07C15198DDE001C3793 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72A07B15198DDE001C3793 /* CoreVideo.framework */; };
 		DAA848B9151C155E00870719 /* MicroscopeCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA848B8151C155E00870719 /* MicroscopeCamera.m */; };
@@ -113,6 +115,8 @@
 		DA6069961519A71900B6CEEC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DA63ACA7151AB90D0090EAEF /* UserSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSequence.h; sourceTree = "<group>"; };
 		DA63ACA8151AB90D0090EAEF /* UserSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSequence.m; sourceTree = "<group>"; };
+		DA6BFF7815351A01007047A0 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon.png"; sourceTree = "<group>"; };
+		DA6BFF7B15351A11007047A0 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon.png"; sourceTree = "<group>"; };
 		DA72A07915198DD9001C3793 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		DA72A07B15198DDE001C3793 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		DAA848B7151C155E00870719 /* MicroscopeCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroscopeCamera.h; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 		DA1E7EF4150DAB2E0067B351 = {
 			isa = PBXGroup;
 			children = (
+				DA6BFF7B15351A11007047A0 /* app-icon.png */,
 				DA2A906E150EF43B000F5DA7 /* Images */,
 				DA1E7F09150DAB2F0067B351 /* CellScope */,
 				DA1E7F2A150DAB2F0067B351 /* CellScopeTests */,
@@ -277,6 +282,7 @@
 		DA2A906E150EF43B000F5DA7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DA6BFF7815351A01007047A0 /* app-icon.png */,
 				DA30EC431535083800FD9671 /* Results_10000.png */,
 				DA30EC441535083800FD9671 /* Results_50000.png */,
 				DA30EC411534FF5400FD9671 /* Focus_A.pdf */,
@@ -391,6 +397,8 @@
 				DA30EC421534FF5400FD9671 /* Focus_A.pdf in Resources */,
 				DA30EC451535083800FD9671 /* Results_10000.png in Resources */,
 				DA30EC461535083800FD9671 /* Results_50000.png in Resources */,
+				DA6BFF7915351A01007047A0 /* app-icon.png in Resources */,
+				DA6BFF7C15351A11007047A0 /* app-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
