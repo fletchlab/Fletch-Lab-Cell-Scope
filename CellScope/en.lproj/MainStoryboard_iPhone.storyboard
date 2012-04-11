@@ -33,6 +33,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scan New Sample" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="HsM-9P-b1n">
+                                                    <rect key="frame" x="20" y="20" width="280" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Photo Instructions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Mug-jI-xiK">
+                                                    <rect key="frame" x="20" y="38" width="85" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="OGx-5h-rlU" kind="modal" identifier="CollectImagesPictureInstructions" modalTransitionStyle="coverVertical" id="Bqp-3I-yvX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="GI1-mN-XIs">
+                                        <rect key="frame" x="0.0" y="124" width="320" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scan New Sample" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Yul-81-MWI">
                                                     <rect key="frame" x="20" y="29" width="280" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -43,26 +71,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="OGx-5h-rlU" kind="modal" identifier="CollectImages" id="Bqp-3I-yvX"/>
+                                            <segue destination="OGx-5h-rlU" kind="modal" identifier="CollectImages" id="jhy-d4-gB5"/>
                                         </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="GI1-mN-XIs">
-                                        <rect key="frame" x="0.0" y="124" width="320" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Review Existing Dataset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Yul-81-MWI">
-                                                    <rect key="frame" x="20" y="29" width="280" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -102,7 +112,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="recordVideoPresetTime:" destination="OGx-5h-rlU" eventType="touchUpInside" id="yDs-X3-Lqg"/>
+                                    <action selector="onActionButtonTouch:" destination="OGx-5h-rlU" eventType="touchUpInside" id="xkV-QL-DTr"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="d7n-gL-TC8" userLabel="Activity Indicator - Processing">
@@ -118,7 +128,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="User Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="FaC-Se-kf3">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="FaC-Se-kf3">
                                 <rect key="frame" x="20" y="0.0" width="280" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -143,18 +153,132 @@
                         <outlet property="userMessageImage" destination="G3y-Lh-0yv" id="s0b-J4-0S9"/>
                         <outlet property="userMessageLabel" destination="FaC-Se-kf3" id="mN8-Oi-1aX"/>
                         <outlet property="videoProgressBar" destination="yEm-ca-yK4" id="sFl-Gg-xji"/>
+                        <segue destination="cy7-F4-85s" kind="modal" identifier="GraphicInstruction" id="BWZ-hg-dII"/>
+                        <segue destination="S2v-Rc-Ec9" kind="modal" identifier="Results" id="Wzo-OD-Z12"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="141" y="-561"/>
+            <point key="canvasLocation" x="203" y="-561"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="qAb-wv-fEm">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UI5-KB-LOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="S2v-Rc-Ec9" customClass="ResultsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LYT-cM-1nX">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Results_10000.png" id="o8R-FB-lde">
+                                <rect key="frame" x="0.0" y="-21" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SM8-9a-VjJ">
+                                <rect key="frame" x="89" y="402" width="142" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDone:" destination="S2v-Rc-Ec9" eventType="touchUpInside" id="9HG-37-Eef"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="671" y="-1189"/>
+        </scene>
+        <!--Picture Instructions View Controller-->
+        <scene sceneID="BNM-nE-Wwu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7fr-ZP-riI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="cy7-F4-85s" customClass="PictureInstructionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dRC-Do-dTR">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="patient_step_A.png" id="HfL-tt-ifW">
+                                <rect key="frame" x="0.0" y="-36" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="igu-py-Oio">
+                                <rect key="frame" x="87" y="403" width="147" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.0" green="0.4965820312" blue="0.058022905909999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onNext:" destination="cy7-F4-85s" eventType="touchUpInside" id="Mt3-Fb-8ZK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="instructionPicture" destination="HfL-tt-ifW" id="8LH-Ly-wY9"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="666" y="-561"/>
         </scene>
     </scenes>
     <resources>
         <image name="CameraButton.png" width="169" height="85"/>
+        <image name="Results_10000.png" width="1333" height="2000"/>
+        <image name="patient_step_A.png" width="1333" height="2000"/>
     </resources>
+    <classes>
+        <class className="AppMenuViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppMenuViewController.h"/>
+        </class>
+        <class className="CollectImagesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CollectImagesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onActionButtonTouch"/>
+                <relationship kind="outlet" name="analyzingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cameraView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="imageProcessingActivityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="roundProgressView" candidateClass="DZRoundProgressView"/>
+                <relationship kind="outlet" name="userMessageImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userMessageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="videoProgressBar" candidateClass="UIProgressView"/>
+            </relationships>
+        </class>
+        <class className="DZRoundProgressView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DZRoundProgressView.h"/>
+        </class>
+        <class className="PictureInstructionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PictureInstructionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onNext:"/>
+                <relationship kind="outlet" name="instructionPicture" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onDone:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Bqp-3I-yvX"/>
+    </inferredMetricsTieBreakers>
 </document>

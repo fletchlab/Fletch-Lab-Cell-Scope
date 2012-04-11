@@ -33,16 +33,22 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"CollectImages"])
+    if ([segue.identifier isEqualToString:@"CollectImagesPictureInstructions"])
 	{
-        NSLog(@"Hello segue");
 		CollectImagesViewController *collectImagesViewController = segue.destinationViewController;
         collectImagesViewController.delegate = self;
+        collectImagesViewController.instructionMode = @"PictureInstructions";
+	}
+    else if ([segue.identifier isEqualToString:@"CollectImages"])
+	{
+		CollectImagesViewController *collectImagesViewController = segue.destinationViewController;
+        collectImagesViewController.delegate = self;
+        collectImagesViewController.instructionMode = @"None";
 	}
 }
 
