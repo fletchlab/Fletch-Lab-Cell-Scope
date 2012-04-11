@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import "AnalysisController.h"
 #import "CollectImagesViewController.h"
 #import "PictureInstructionsViewController.h"
 #import "CameraViewController.h"
@@ -19,8 +20,8 @@
 - (void)videoProgressNotification:(NSNotification *)notif;
 
 @end
-
 @implementation CollectImagesViewController
+
 
 @synthesize roundProgressView;
 @synthesize videoProgressBar;
@@ -154,6 +155,7 @@
     [self.imageProcessingActivityIndicator startAnimating]; 
     self.analyzingLabel.hidden = NO;
     [NSTimer scheduledTimerWithTimeInterval:processingTime target:self selector:@selector(onDoneProcessing:) userInfo:nil repeats:NO];
+    [microscopeCamera analyzeImages];
 }
 
 - (void)onDoneProcessing:(NSTimer *)timer
