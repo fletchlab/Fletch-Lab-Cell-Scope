@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="dxx-Rb-q1n">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
@@ -189,6 +190,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="resultsImage" destination="o8R-FB-lde" id="UFE-YJ-zgP"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="671" y="-1189"/>
@@ -237,40 +241,6 @@
         <image name="Results_10000.png" width="1333" height="2000"/>
         <image name="patient_step_A.png" width="1333" height="2000"/>
     </resources>
-    <classes>
-        <class className="AppMenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppMenuViewController.h"/>
-        </class>
-        <class className="CollectImagesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CollectImagesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onActionButtonTouch"/>
-                <relationship kind="outlet" name="analyzingLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cameraView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="imageProcessingActivityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="roundProgressView" candidateClass="DZRoundProgressView"/>
-                <relationship kind="outlet" name="userMessageImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="userMessageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="videoProgressBar" candidateClass="UIProgressView"/>
-            </relationships>
-        </class>
-        <class className="DZRoundProgressView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DZRoundProgressView.h"/>
-        </class>
-        <class className="PictureInstructionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PictureInstructionsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onNext:"/>
-                <relationship kind="outlet" name="instructionPicture" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="ResultsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onDone:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

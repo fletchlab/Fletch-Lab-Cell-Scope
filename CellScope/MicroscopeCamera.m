@@ -165,10 +165,9 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     
     // If task is complete, stop and clear the timer
     if (taskTimeElapsed >= taskTime) {
-        
         [self.taskTimer invalidate];
         self.taskTimer = nil;
-        if (recording==TRUE){
+        if (recording == TRUE){
             [self finishVideo];
         }
     }
@@ -189,64 +188,68 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     return prevLayer;
 }
 
-- (void) initVideo{
+- (void) initVideo {
     NSLog(@"start recording");
-    //tell the delegate to start listening to the video output
-    recording=TRUE;
-    //reset the frame number
-    frameNumber=0;
-    //create our analysis object to which we will send data
-    analysis_object=[[AnalysisController alloc] init];
+    if(!recording) {
+        //tell the delegate to start listening to the video output
+        recording=TRUE;
+        //reset the frame number
+        frameNumber=0;
+        //create our analysis object to which we will send data
+        analysis_object=[[AnalysisController alloc] init];
 
-    //delete files in temp folder
-    NSFileManager* fileManager = [NSFileManager defaultManager];
-    // get all files in the temp folder
-    NSArray* files = [fileManager   contentsOfDirectoryAtPath:NSTemporaryDirectory() error:nil];
-    // delete
-    for (int i=0; i<[files count]; i++)
-    {
-        NSString* fileName = [files objectAtIndex:i];
-        [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/%@", NSTemporaryDirectory(), fileName] error:nil];
-    }
+        //delete files in temp folder
+        NSFileManager* fileManager = [NSFileManager defaultManager];
+        // get all files in the temp folder
+        NSArray* files = [fileManager   contentsOfDirectoryAtPath:NSTemporaryDirectory() error:nil];
+        // delete
+        for (int i=0; i<[files count]; i++)
+        {
+            NSString* fileName = [files objectAtIndex:i];
+            [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/%@", NSTemporaryDirectory(), fileName] error:nil];
+        }
     
-    //create assetwriter H.264 within the normal MPEG4 container 
-    assetWriter = [[AVAssetWriter alloc]
+        //create assetwriter H.264 within the normal MPEG4 container 
+        assetWriter = [[AVAssetWriter alloc]
                    initWithURL:outputURL
                    fileType:
                    AVFileTypeMPEG4
                    error:nil
                    ];
-    [assetWriter addInput:assetWriterInput];
+        [assetWriter addInput:assetWriterInput];
     
     
-    [assetWriter startWriting];
-    [assetWriter startSessionAtSourceTime:kCMTimeZero];
-
-}
-- (void) finishVideo{
-    NSLog(@"stop recording");
-    recording=FALSE;
-    [assetWriter finishWriting];
-    ALAssetsLibrary * library = [[ALAssetsLibrary alloc] init];
-    
-    if ([library videoAtPathIsCompatibleWithSavedPhotosAlbum:outputURL])
-    {
-        [library writeVideoAtPathToSavedPhotosAlbum:outputURL
-                                    completionBlock:^(NSURL *assetURL, NSError *error)
-         {
-             if (error)
-             {
-                 
-             }
-         }];
+        [assetWriter startWriting];
+        [assetWriter startSessionAtSourceTime:kCMTimeZero];
     }
 }
 
-- (void) analyzeImages{
+- (void) finishVideo{
+    NSLog(@"stop recording");
+    if(recording) {
+        recording=FALSE;
+        [assetWriter finishWriting];
+        ALAssetsLibrary * library = [[ALAssetsLibrary alloc] init];
+        
+        if ([library videoAtPathIsCompatibleWithSavedPhotosAlbum:outputURL]) {
+            [library writeVideoAtPathToSavedPhotosAlbum:outputURL
+                                    completionBlock:^(NSURL *assetURL, NSError *error)
+            {
+                if (error)
+                {
+                 
+                }
+            }];
+        }
+    }
+}
+
+- (void) analyzeImages
+{
     [analysis_object analyzeImages];
 }
 
-- (void)        captureOutput:(AVCaptureOutput *)captureOutput 
+- (void) captureOutput:(AVCaptureOutput *)captureOutput 
         didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer 
                fromConnection:(AVCaptureConnection *)connection
 {

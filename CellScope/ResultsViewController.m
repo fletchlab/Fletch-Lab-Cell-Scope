@@ -14,6 +14,7 @@
 
 @implementation ResultsViewController
 
+@synthesize resultsImage;
 @synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -29,10 +30,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    int number = (arc4random()%100)+1; //Generates Number from 1 to 100.
+    if (number > 50) {
+        self.resultsImage.image = [UIImage imageNamed:@"Results_50000.png"];
+    }
 }
 
 - (void)viewDidUnload
 {
+    [self setResultsImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
