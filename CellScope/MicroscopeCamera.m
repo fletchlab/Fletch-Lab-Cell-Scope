@@ -3,7 +3,7 @@
 //  CellScope
 //
 //  Created by Matthew Bakalar on 3/22/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 FletchLab. All rights reserved.
 //
 
 #import "MicroscopeCamera.h"
