@@ -155,7 +155,7 @@
     [self.imageProcessingActivityIndicator startAnimating]; 
     self.analyzingLabel.hidden = NO;
     [NSTimer scheduledTimerWithTimeInterval:processingTime target:self selector:@selector(onDoneProcessing:) userInfo:nil repeats:NO];
-    [microscopeCamera analyzeImages];
+    // [microscopeCamera analyzeImages];
 }
 
 - (void)onDoneProcessing:(NSTimer *)timer

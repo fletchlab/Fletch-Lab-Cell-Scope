@@ -16,6 +16,7 @@
 
 @interface ResultsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *resultsImage;
 @property (weak, nonatomic) id <ResultsViewControllerDelegate> delegate;
 
 - (IBAction)onDone:(id)sender;
