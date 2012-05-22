@@ -17,6 +17,7 @@
 @interface ResultsViewController : UIViewController
 
 @property (weak, nonatomic) id <ResultsViewControllerDelegate> delegate;
+
 - (IBAction)onDone:(id)sender;
 
 @end

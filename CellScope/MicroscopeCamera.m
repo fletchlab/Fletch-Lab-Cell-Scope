@@ -29,13 +29,13 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     
     // Lock the focus
     BOOL focusSupported = [captureInput.device isFocusModeSupported:AVCaptureFocusModeLocked] & 
-        [captureInput.device lockForConfiguration:nil];
+    [captureInput.device lockForConfiguration:nil];
     
     if (focusSupported) {
         [captureInput.device setFocusMode:AVCaptureFocusModeLocked];
         [captureInput.device unlockForConfiguration];
     }
-
+    
     self.captureOutput = [[AVCaptureVideoDataOutput alloc] init];
     
     // Process frames while dispatch queue is occupied?
@@ -53,7 +53,7 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     // Add input and output to the session
     [self.captureSession addInput:captureInput];
     [self.captureSession addOutput:captureOutput];
-
+    
     //Set frame rate (if requried)
     AVCaptureConnection *captureConnection = [captureOutput connectionWithMediaType:AVMediaTypeVideo];
 	CMTimeShow(captureConnection.videoMinFrameDuration);
@@ -64,7 +64,7 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
 		captureConnection.videoMaxFrameDuration = CMTimeMake(1, 30);
     CMTimeShow(captureConnection.videoMinFrameDuration);
     CMTimeShow(captureConnection.videoMaxFrameDuration);
-
+    
     
     // Set capture quality
     [self.captureSession setSessionPreset:AVCaptureSessionPresetPhoto];
@@ -79,14 +79,14 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     //720p on iphone4 is way to slow
     NSDictionary *outputSettings;
     /*if ([captureSession canSetSessionPreset:AVCaptureSessionPreset1280x720]){				
-
-        outputSettings =
-        [NSDictionary dictionaryWithObjectsAndKeys:
-         [NSNumber numberWithInt:1280], AVVideoWidthKey,
-         [NSNumber numberWithInt:720], AVVideoHeightKey,
-         AVVideoCodecH264, AVVideoCodecKey,
-         nil];
-    }*/
+     
+     outputSettings =
+     [NSDictionary dictionaryWithObjectsAndKeys:
+     [NSNumber numberWithInt:1280], AVVideoWidthKey,
+     [NSNumber numberWithInt:720], AVVideoHeightKey,
+     AVVideoCodecH264, AVVideoCodecKey,
+     nil];
+     }*/
     if ([captureSession canSetSessionPreset:AVCaptureSessionPreset640x480]){		
         outputSettings =
         [NSDictionary dictionaryWithObjectsAndKeys:
@@ -94,15 +94,15 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
          [NSNumber numberWithInt:480], AVVideoHeightKey,
          AVVideoCodecH264, AVVideoCodecKey,
          nil];
-    
+        
     }
     //set up the assetwriter input
     assetWriterInput = [AVAssetWriterInput 
-                                            assetWriterInputWithMediaType:AVMediaTypeVideo
-                                            outputSettings:outputSettings];
+                        assetWriterInputWithMediaType:AVMediaTypeVideo
+                        outputSettings:outputSettings];
     
     // set up the AVAssetWriterPixelBufferAdaptor to expect 32BGRA input
-     pixelBufferAdaptor =
+    pixelBufferAdaptor =
     [[AVAssetWriterInputPixelBufferAdaptor alloc] 
      initWithAssetWriterInput:assetWriterInput 
      sourcePixelBufferAttributes:
@@ -177,7 +177,7 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
 - (void)startCapture
 {
     // Start the capture
-
+    
     [self.captureSession startRunning];
 }
 
@@ -197,7 +197,7 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     frameNumber=0;
     //create our analysis object to which we will send data
     analysis_object=[[AnalysisController alloc] init];
-
+    
     //delete files in temp folder
     NSFileManager* fileManager = [NSFileManager defaultManager];
     // get all files in the temp folder
@@ -221,7 +221,7 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     
     [assetWriter startWriting];
     [assetWriter startSessionAtSourceTime:kCMTimeZero];
-
+    
 }
 - (void) finishVideo{
     NSLog(@"stop recording");
@@ -260,28 +260,29 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
             [pixelBufferAdaptor appendPixelBuffer:imageBuffer
                              withPresentationTime:CMTimeMake(frameNumber, 30)];
         }
+
         if ((frameNumber % 30)==0){
             //this block puts the current image buffer into NSData.  Right now, stick with converting it to UIImage
             /*
-            //get the byte data from sampleBuffer in an NSData
-            CVPixelBufferLockBaseAddress(imageBuffer, 0); 
-            size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
-            //size_t width = CVPixelBufferGetWidth(imageBuffer);
-            size_t height = CVPixelBufferGetHeight(imageBuffer);
-            void *src_buff = CVPixelBufferGetBaseAddress(imageBuffer);
+             //get the byte data from sampleBuffer in an NSData
+             CVPixelBufferLockBaseAddress(imageBuffer, 0); 
+             size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+             //size_t width = CVPixelBufferGetWidth(imageBuffer);
+             size_t height = CVPixelBufferGetHeight(imageBuffer);
+             void *src_buff = CVPixelBufferGetBaseAddress(imageBuffer);
              
-            NSData *data = [NSData dataWithBytes:src_buff length:bytesPerRow * height];
-            [analysis_object addImage:curr_image]; 
+             NSData *data = [NSData dataWithBytes:src_buff length:bytesPerRow * height];
+             [analysis_object addImage:curr_image]; 
              
-            UIImage *curr_image = [self imageFromSampleBuffer:sampleBuffer];
-
-            CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+             UIImage *curr_image = [self imageFromSampleBuffer:sampleBuffer];
+             
+             CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
              */
-            
             UIImage *curr_image = [self imageFromSampleBuffer:sampleBuffer];
+
             [analysis_object addImage:curr_image]; 
-
-
+            
+            
         }
         frameNumber++;
     }

@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8212654D1534B5A000E23E8A /* AnalysisController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212654C1534B5A000E23E8A /* AnalysisController.m */; };
+		8212654D1534B5A000E23E8A /* AnalysisController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8212654C1534B5A000E23E8A /* AnalysisController.mm */; };
+		822685421568298600C6A587 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822685411568298600C6A587 /* ImageIO.framework */; };
+		82268545156829A000C6A587 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 82268544156829A000C6A587 /* libz.dylib */; };
+		822685481568895100C6A587 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 822685471568895100C6A587 /* UIImage+OpenCV.mm */; };
+		82DB1BFC156893F20029EBD3 /* OpenCV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BA990E1568264A00CB48F7 /* OpenCV.framework */; };
 		82E590F51533B6FB0025904C /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E590F41533B6FB0025904C /* AssetsLibrary.framework */; };
 		DA1E7F04150DAB2F0067B351 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1E7F03150DAB2E0067B351 /* UIKit.framework */; };
 		DA1E7F06150DAB2F0067B351 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1E7F05150DAB2F0067B351 /* Foundation.framework */; };
@@ -65,7 +69,12 @@
 
 /* Begin PBXFileReference section */
 		8212654B1534B59F00E23E8A /* AnalysisController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisController.h; sourceTree = "<group>"; };
-		8212654C1534B5A000E23E8A /* AnalysisController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisController.m; sourceTree = "<group>"; };
+		8212654C1534B5A000E23E8A /* AnalysisController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnalysisController.mm; sourceTree = "<group>"; };
+		822685411568298600C6A587 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		82268544156829A000C6A587 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		822685461568895100C6A587 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+OpenCV.h"; path = "../../../../../Downloads/aptogo-OpenCVForiPhone-cb262eb/OpenCVClient/UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		822685471568895100C6A587 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "UIImage+OpenCV.mm"; path = "../../../../../Downloads/aptogo-OpenCVForiPhone-cb262eb/OpenCVClient/UIImage+OpenCV.mm"; sourceTree = "<group>"; };
+		82BA990E1568264A00CB48F7 /* OpenCV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCV.framework; path = "../../../../Downloads/aptogo-OpenCVForiPhone-cb262eb/OpenCV.framework"; sourceTree = "<group>"; };
 		82E590F41533B6FB0025904C /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		DA1E7EFF150DAB2E0067B351 /* CellScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CellScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1E7F03150DAB2E0067B351 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -130,6 +139,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DB1BFC156893F20029EBD3 /* OpenCV.framework in Frameworks */,
+				82268545156829A000C6A587 /* libz.dylib in Frameworks */,
+				822685421568298600C6A587 /* ImageIO.framework in Frameworks */,
 				82E590F51533B6FB0025904C /* AssetsLibrary.framework in Frameworks */,
 				DA6069971519A71900B6CEEC /* CoreMedia.framework in Frameworks */,
 				DA6069941519A44400B6CEEC /* QuartzCore.framework in Frameworks */,
@@ -179,6 +191,9 @@
 		DA1E7F02150DAB2E0067B351 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				82268544156829A000C6A587 /* libz.dylib */,
+				822685411568298600C6A587 /* ImageIO.framework */,
+				82BA990E1568264A00CB48F7 /* OpenCV.framework */,
 				82E590F41533B6FB0025904C /* AssetsLibrary.framework */,
 				DA6069961519A71900B6CEEC /* CoreMedia.framework */,
 				DA6069931519A44400B6CEEC /* QuartzCore.framework */,
@@ -302,9 +317,11 @@
 			isa = PBXGroup;
 			children = (
 				DA2E4FA415279B4B0013B9E9 /* CameraViewController.h */,
+				822685461568895100C6A587 /* UIImage+OpenCV.h */,
+				822685471568895100C6A587 /* UIImage+OpenCV.mm */,
 				DA2E4FA515279B4B0013B9E9 /* CameraViewController.m */,
 				8212654B1534B59F00E23E8A /* AnalysisController.h */,
-				8212654C1534B5A000E23E8A /* AnalysisController.m */,
+				8212654C1534B5A000E23E8A /* AnalysisController.mm */,
 			);
 			name = SubviewControllers;
 			sourceTree = "<group>";
@@ -441,7 +458,8 @@
 				DA3F116E1533C09C008BB244 /* PictureInstructionsViewController.m in Sources */,
 				DA3F11711533C5A6008BB244 /* PictureInstructionSequence.m in Sources */,
 				DA30EC49153509B700FD9671 /* ResultsViewController.m in Sources */,
-				8212654D1534B5A000E23E8A /* AnalysisController.m in Sources */,
+				8212654D1534B5A000E23E8A /* AnalysisController.mm in Sources */,
+				822685481568895100C6A587 /* UIImage+OpenCV.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +568,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fletch2 Lab (4G3LRZJ5QU)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Downloads/aptogo-OpenCVForiPhone-cb262eb\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CellScope/CellScope-Prefix.pch";
 				INFOPLIST_FILE = "CellScope/CellScope-Info.plist";
@@ -562,6 +584,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fletch2 Lab (4G3LRZJ5QU)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Downloads/aptogo-OpenCVForiPhone-cb262eb\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CellScope/CellScope-Prefix.pch";
 				INFOPLIST_FILE = "CellScope/CellScope-Info.plist";
