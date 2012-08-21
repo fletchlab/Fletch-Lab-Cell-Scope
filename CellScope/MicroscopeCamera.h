@@ -67,6 +67,6 @@ extern NSString * const NOTIF_VideoProgress;
 - (AVCaptureVideoPreviewLayer*)generateVideoPreviewLayer;
 - (void) initVideo;
 - (void) finishVideo;
-- (void) analyzeImages;
+- (int) analyzeImages;
 
 @end

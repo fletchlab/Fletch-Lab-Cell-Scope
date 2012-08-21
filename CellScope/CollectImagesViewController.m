@@ -14,15 +14,15 @@
 #import "DZRoundProgressView.h"
 #import "UserSequence.h"
 #import "PictureInstructionSequence.h"
-
+//#import "ResultsViewController.h"
+//#import "ResultsViewController.m"
 @interface CollectImagesViewController (private)
-
 - (void)videoProgressNotification:(NSNotification *)notif;
 
 @end
 @implementation CollectImagesViewController
 
-
+@synthesize num_mf;
 @synthesize roundProgressView;
 @synthesize videoProgressBar;
 @synthesize cameraView;
@@ -151,11 +151,12 @@
 
 - (void)startImageProcessingDummy
 {
-    float processingTime = 2.5; // Pretend to process image for 2.5 second
+    float processingTime = 5; // Pretend to process image for 2.5 second
     [self.imageProcessingActivityIndicator startAnimating]; 
     self.analyzingLabel.hidden = NO;
     [NSTimer scheduledTimerWithTimeInterval:processingTime target:self selector:@selector(onDoneProcessing:) userInfo:nil repeats:NO];
-    // [microscopeCamera analyzeImages];
+    
+
 }
 
 - (void)onDoneProcessing:(NSTimer *)timer
@@ -178,7 +179,24 @@
         self.roundProgressView.progress = 0.0;
         self.videoProgressBar.hidden = YES;
         [self startImageProcessingDummy];
+        int num_mf_temp=[microscopeCamera analyzeImages];
+        
+        [self setMF:num_mf_temp];
+        
     }
+}
+
+
+
+-(void) setMF:(int) num_mf_temp2{
+    self.num_mf=self.num_mf+num_mf_temp2;
+
+
+}
+-(int) getMF{
+    return self.num_mf;
+    NSLog(@"num_mf=%i", self.num_mf);
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -198,6 +216,8 @@
 	{
 		ResultsViewController *resultsViewController = segue.destinationViewController;
         resultsViewController.delegate = self;
+        [resultsViewController setMFR:self.num_mf];
+        self.num_mf=0;
 	}
 
 }

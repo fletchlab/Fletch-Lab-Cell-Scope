@@ -18,7 +18,7 @@
 
 -(NSMutableArray *)getImageArray;
 
--(void)analyzeImages;
+-(int)analyzeImages;
 
 
 

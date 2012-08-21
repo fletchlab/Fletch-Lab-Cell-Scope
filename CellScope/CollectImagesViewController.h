@@ -27,7 +27,7 @@
 @interface CollectImagesViewController : UIViewController <PictureInstructionsViewControllerDelegate, ResultsViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet DZRoundProgressView *roundProgressView;
-
+@property int num_mf;
 @property (weak, nonatomic) IBOutlet UIProgressView *videoProgressBar;
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 
@@ -49,6 +49,7 @@
 - (void)nextUserMessage;
 - (void)onDoneProcessing:(NSTimer *)timer;
 - (void)updateUserMessageLabel;
-
+- (void) setMF;
+- (int) getMF;
 
 @end

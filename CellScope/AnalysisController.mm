@@ -39,8 +39,8 @@ struct pixel {
 unsigned char r, g, b, a;
 };
 */
-- (void) analyzeImages{
-    
+- (int) analyzeImages{
+    int numContours=0;
     
     NSLog(@"analyzing from AnalysisController");
     if ([array count]>0){
@@ -63,10 +63,10 @@ unsigned char r, g, b, a;
         
         //for (int i = 0; i < times; i++)
         //{
-            //cv::Mat tempMat= [image2 CVMat];
-            //cv::Mat tempMat2= [image CVMat];
+            cv::Mat tempMat= [image2 CVMat];
+            cv::Mat tempMat2= [image CVMat];
         //}
-        CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
+        /*CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
         CGFloat cols = image.size.width;
         CGFloat rows = image.size.height;
         
@@ -100,7 +100,7 @@ unsigned char r, g, b, a;
         
         CGContextDrawImage(contextRef2, CGRectMake(0, 0, cols2, rows2), image2.CGImage);
         CGContextRelease(contextRef2);
-
+*/
         
         t = 1000 * ((double)cv::getTickCount() - t) / cv::getTickFrequency() / times;
         
@@ -113,14 +113,13 @@ unsigned char r, g, b, a;
         cv::Mat dst(tempMat.size(), tempMat.type());
         cv::absdiff(tempMat, tempMat2, dst);
         //cv::copyMakeBorder(tempMat,dst,50,50,50,50,IPL_BORDER_CONSTANT, cvScalarAll(255) );
-        NSLog(@"analysis complete");
         
         
         
         //IplImage* img=cvCreateImage(cvSize(640,480),IPL_DEPTH_8U,1);
         //CvScalar s;
         //IplImage iplimg = grayscaled;
-        for( int i = 0; i < dst.rows; i++ )
+        /*for( int i = 0; i < dst.rows; i++ )
         { 
             //for( int j = 0; j < grayscaled.cols; j++ )
             for( int j = 0; j < 853; j++ )
@@ -186,7 +185,7 @@ unsigned char r, g, b, a;
                     //dst.at<cv::Vec3b>(v,t)[2] = 0;
                 }
             }
-        }
+        }/*
 
         /*for( int y = 0; y < grayscaled.rows; y++ )
             { 
@@ -223,18 +222,18 @@ unsigned char r, g, b, a;
         
         NSLog(@"cv::Mat to UIImage: %gms", t);
 
-        //UIImageWriteToSavedPhotosAlbum(outImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+        UIImageWriteToSavedPhotosAlbum(outImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
         
         //grayscale mask
         cv::Mat(grayscaled);
         cv::cvtColor(dst, grayscaled, CV_RGB2GRAY );
         cv::Mat(bw);
 
-        cv::threshold(grayscaled,bw,25,255,CV_THRESH_BINARY);
+        cv::threshold(grayscaled,bw,50,255,CV_THRESH_BINARY);
         
-        UIImage *outImagebw; 
-        outImagebw = [[UIImage alloc] initWithCVMat:bw];
-        UIImageWriteToSavedPhotosAlbum(outImagebw, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+        //UIImage *outImagebw; 
+        //outImagebw = [[UIImage alloc] initWithCVMat:bw];
+        //UIImageWriteToSavedPhotosAlbum(outImagebw, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
         
         
         CvMemStorage *storage;
@@ -248,7 +247,6 @@ unsigned char r, g, b, a;
                 
         
         IplImage *input = cvCloneImage(&IplBW);
-        int numContours=0;
         storage = cvCreateMemStorage(0); // pl.Ensure you will have enough room here.
         CvSeq *contour = NULL;
         int size=100;
@@ -291,7 +289,8 @@ unsigned char r, g, b, a;
         UIImageWriteToSavedPhotosAlbum(outImagebwopen, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 
         NSLog(@"num countours:%i", numContours);
-        
+        NSLog(@"analysis complete");
+
 
         cvReleaseMemStorage( &storage ); // desallocate CvSeq as well.
         cvReleaseImage(&input);
@@ -388,9 +387,9 @@ unsigned char r, g, b, a;
          
     //UIImage *imagesquare=[self drawSquareOnImage:image];
     //UIImageWriteToSavedPhotosAlbum(imagesquare, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-    
+
      }
-         
+    return numContours;
 }
 - (UIImage *)drawSquareOnImage:(UIImage *)image
 {

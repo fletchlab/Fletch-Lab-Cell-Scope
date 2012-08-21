@@ -190,23 +190,24 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
 
 - (void) initVideo {
     NSLog(@"start recording");
-    //tell the delegate to start listening to the video output
-    recording=TRUE;
-    //reset the frame number
-    frameNumber=0;
-    //create our analysis object to which we will send data
-    analysis_object=[[AnalysisController alloc] init];
-    
-    //delete files in temp folder
-    NSFileManager* fileManager = [NSFileManager defaultManager];
-    // get all files in the temp folder
-    NSArray* files = [fileManager   contentsOfDirectoryAtPath:NSTemporaryDirectory() error:nil];
-    // delete
-    for (int i=0; i<[files count]; i++)
-    {
-        NSString* fileName = [files objectAtIndex:i];
-        [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/%@", NSTemporaryDirectory(), fileName] error:nil];
-    }
+    if(!recording) {
+        //tell the delegate to start listening to the video output
+        recording=TRUE;
+        //reset the frame number
+        frameNumber=0;
+        //create our analysis object to which we will send data
+        analysis_object=[[AnalysisController alloc] init];
+
+        //delete files in temp folder
+        NSFileManager* fileManager = [NSFileManager defaultManager];
+        // get all files in the temp folder
+        NSArray* files = [fileManager   contentsOfDirectoryAtPath:NSTemporaryDirectory() error:nil];
+        // delete
+        for (int i=0; i<[files count]; i++)
+        {
+            NSString* fileName = [files objectAtIndex:i];
+            [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/%@", NSTemporaryDirectory(), fileName] error:nil];
+        }
     
         //create assetwriter H.264 within the normal MPEG4 container 
         assetWriter = [[AVAssetWriter alloc]
@@ -221,8 +222,8 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     [assetWriter startWriting];
     [assetWriter startSessionAtSourceTime:kCMTimeZero];
     
+    }
 }
-
 - (void) finishVideo{
     NSLog(@"stop recording");
     if(recording) {
@@ -243,9 +244,10 @@ NSString * const NOTIF_VideoProgress = @"VideoProgress"; // Notification ID for 
     }
 }
 
-- (void) analyzeImages
+- (int) analyzeImages
 {
-    [analysis_object analyzeImages];
+    int num_mf=[analysis_object analyzeImages];
+    return num_mf;
 }
 
 - (void) captureOutput:(AVCaptureOutput *)captureOutput 

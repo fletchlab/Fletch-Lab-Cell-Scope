@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CollectImagesViewController;
 
 @class ResultsViewController;
 
@@ -15,10 +16,13 @@
 @end
 
 @interface ResultsViewController : UIViewController
+@property (nonatomic, retain) CollectImagesViewController* collectImageViewController;
+@property int num_mfR;
 
 @property (weak, nonatomic) IBOutlet UIImageView *resultsImage;
 @property (weak, nonatomic) id <ResultsViewControllerDelegate> delegate;
 
 - (IBAction)onDone:(id)sender;
+-(void) setMFR:(int) num_mf_temp3;
 
 @end

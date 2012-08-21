@@ -7,16 +7,16 @@
 //
 
 #import "ResultsViewController.h"
-
+#import "CollectImagesViewController.h"
 @interface ResultsViewController ()
 
 @end
 
 @implementation ResultsViewController
-
+@synthesize num_mfR;
 @synthesize resultsImage;
 @synthesize delegate;
-
+@synthesize collectImageViewController;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,10 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
 	// Do any additional setup after loading the view.
-    int number = (arc4random()%100)+1; //Generates Number from 1 to 100.
-    if (number > 50) {
+    //int mf_num=[self.collectImageViewController getMF];
+    NSLog(@"num_mf=%i", self.num_mfR);
+
+    //int number = (arc4random()%100)+1; //Generates Number from 1 to 100.
+    if (self.num_mfR > 50) {
         self.resultsImage.image = [UIImage imageNamed:@"Results_50000.png"];
     }
 }
@@ -52,4 +54,8 @@
 - (IBAction)onDone:(id)sender {
     [delegate resultsViewControllerDone:self];
 }
+-(void) setMFR:(int) num_mf_temp3{
+    self.num_mfR=num_mf_temp3/4;
+}
+
 @end
